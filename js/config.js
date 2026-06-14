@@ -1,34 +1,25 @@
-// ─────────────────────────────────────────────────────────────────
-//  config.js  –  Frontend Public Configuration
-//  Phase 1.2: Centralized config for all frontend pages.
-//
-//  RULES:
-//  ✅ Only PUBLISHABLE keys allowed here (pk_test_...)
-//  ❌ NEVER put secret keys (sk_test_...) in this file
-//  ❌ NEVER put Razorpay secret here
-//  ❌ NEVER put MC_AUTH_TOKEN here
-// ─────────────────────────────────────────────────────────────────
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+  "https://gujjukhaka.netlify.app",
+  "https://gujjubenskhakhra.infinityfree.io"
+];
 
-window.APP_CONFIG = {
+app.use(cors({
+  origin: function (origin, callback) {
 
-  // Clerk Browser SDK
-  // Get from: https://dashboard.clerk.com → Your App → API Keys
-  CLERK_PUBLISHABLE_KEY : "pk_test_cHJvYmFibGUtbW9zcXVpdG8tMjMuY2xlcmsuYWNjb3VudHMuZGV2JA",
-  CLERK_FRONTEND_API    : "https://probable-mosquito-23.clerk.accounts.dev",
+    // Allow Postman, curl, server-to-server requests
+    if (!origin) return callback(null, true);
 
-  // Backend API base URL
-  // Resolves to Render backend in production, falls back to localhost in dev
-  // NOTE: gujjukhaka.netlify.app is the FRONTEND — the backend (Express/Multer/Cloudinary)
-  //       runs on Render. Replace the URL below with your actual Render service URL.
-  API_BASE_URL : window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
-    ? "http://localhost:3000"
-    : "https://gujjukhaka-backend.onrender.com",
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
 
-  // Razorpay publishable key (KEY_ID only — NOT the secret)
-  // Get from: https://dashboard.razorpay.com → Settings → API Keys
-  RAZORPAY_KEY_ID : "rzp_live_SwqAdCXaHRZnI9",
+    return callback(new Error("CORS not allowed"));
+  },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
-};
-
-// Freeze to prevent accidental mutation
-Object.freeze(window.APP_CONFIG);
+app.options("*", cors());
