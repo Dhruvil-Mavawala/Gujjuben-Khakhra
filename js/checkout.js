@@ -659,22 +659,43 @@ async function launchRazorpay(totalINR) {
   showFormError("");
 
   let rzpOrder;
-  try {
-    const res = await fetch(`${API}/create-order`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: totalINR, amountPaise: Math.round(totalINR * 100) }),
-    });
-    const data = await res.json();
-    if (!res.ok || !data.success || !data.order?.id) {
-      throw new Error(data.error || "Could not create payment order.");
+  // Render free tier cold-starts can return non-JSON. Retry once after a short wait.
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const res = await fetch(`${API}/create-order`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount: totalINR, amountPaise: Math.round(totalINR * 100) }),
+      });
+
+      // Guard: ensure response is JSON before parsing
+      const contentType = res.headers.get("content-type") || "";
+      if (!contentType.includes("application/json")) {
+        const text = await res.text();
+        if (attempt === 1) {
+          console.warn("[Checkout] Non-JSON on attempt 1, retrying in 4s:", text.slice(0, 120));
+          await new Promise(r => setTimeout(r, 4000));
+          continue;
+        }
+        throw new Error("Payment server is starting up. Please wait a moment and try again.");
+      }
+
+      const data = await res.json();
+      if (!res.ok || !data.success || !data.order?.id) {
+        throw new Error(data.error || "Could not create payment order.");
+      }
+      rzpOrder = data.order;
+      break; // success — exit retry loop
+    } catch (err) {
+      if (attempt < 2 && err.message.includes("starting up")) {
+        // will retry
+        continue;
+      }
+      console.error("[Checkout] create-order failed:", err);
+      showFormError("Payment unavailable: " + err.message);
+      setPayBtnLoading(false);
+      return;
     }
-    rzpOrder = data.order;
-  } catch (err) {
-    console.error("[Checkout] create-order failed:", err);
-    showFormError("Payment unavailable: " + err.message);
-    setPayBtnLoading(false);
-    return;
   }
 
   const phone = getPhoneData();
@@ -814,5 +835,11 @@ function escapeHtml(str) {
   if (window.userCurrency) {
     pricingReady = true;
     updateSummary();
+  }
+
+  // Ping the backend now so Render's free tier is warm by the time the user pays
+  const API = window.APP_CONFIG?.API_BASE_URL;
+  if (API) {
+    fetch(`${API}/ping`, { method: "GET" }).catch(() => {});
   }
 })();

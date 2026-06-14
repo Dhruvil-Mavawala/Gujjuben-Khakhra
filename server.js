@@ -79,6 +79,10 @@ if (!RAZORPAY_KEY_ID || !RAZORPAY_KEY_SECRET) {
   );
 }
 
+// ── GET /ping ─────────────────────────────────
+// Wake-up endpoint for Render free tier cold starts
+app.get("/ping", (_req, res) => res.json({ ok: true }));
+
 // ── POST /send-otp ────────────────────────────
 // Body: { phone }  →  Returns: { verificationId }
 app.post("/send-otp", async (req, res) => {
