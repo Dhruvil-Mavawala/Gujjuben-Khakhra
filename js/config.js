@@ -17,12 +17,11 @@ window.APP_CONFIG = {
   CLERK_FRONTEND_API    : "https://probable-mosquito-23.clerk.accounts.dev",
 
   // Backend API base URL
-  // Resolves to Render backend in production, falls back to localhost in dev
-  // NOTE: gujjukhaka.netlify.app is the FRONTEND — the backend (Express/Multer/Cloudinary)
-  //       runs on Render. Replace the URL below with your actual Render service URL.
+  // In production: Netlify proxies /api/* → Render backend (no CORS issues)
+  // In development: hits localhost Express server directly
   API_BASE_URL : window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
     ? "http://localhost:3000"
-    : "https://gujjukhaka-backend.onrender.com",
+    : "/api",
 
   // Razorpay publishable key (KEY_ID only — NOT the secret)
   // Get from: https://dashboard.razorpay.com → Settings → API Keys
