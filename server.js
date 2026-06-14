@@ -20,29 +20,49 @@ try {
 const app = express();
 
 // ── Middleware ────────────────────────────────
-app.use(cors({
-  origin: [
-    "https://gujjukhaka.netlify.app",
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://gujjubenskhakhra.infinityfree.io",
-    "*"
-  ],
-  methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-}));
+const allowedOrigins = [
+  "https://gujjukhaka.netlify.app",
+  "https://www.gujjukhaka.netlify.app",
+  "https://gujjubenskhakhra.infinityfree.io",
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      console.log("Blocked Origin:", origin);
+
+      return callback(new Error("Not allowed by CORS"));
+    },
+
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  }),
+);
+
+app.options("*", cors());
 app.use(express.json());
 
 // ── Credentials (from environment only) ──────
-const MC_CUSTOMER_ID      = process.env.MC_CUSTOMER_ID;
-const MC_AUTH_TOKEN       = process.env.MC_AUTH_TOKEN;
-const MC_BASE_URL         = "https://cpaas.messagecentral.com";
-const RAZORPAY_KEY_ID     = process.env.RAZORPAY_KEY_ID;
+const MC_CUSTOMER_ID = process.env.MC_CUSTOMER_ID;
+const MC_AUTH_TOKEN = process.env.MC_AUTH_TOKEN;
+const MC_BASE_URL = "https://cpaas.messagecentral.com";
+const RAZORPAY_KEY_ID = process.env.RAZORPAY_KEY_ID;
 const RAZORPAY_KEY_SECRET = process.env.RAZORPAY_KEY_SECRET;
 
 // ── Razorpay instance ─────────────────────────
 const razorpay = new Razorpay({
-  key_id    : RAZORPAY_KEY_ID     || "",
+  key_id: RAZORPAY_KEY_ID || "",
   key_secret: RAZORPAY_KEY_SECRET || "",
 });
 
@@ -156,7 +176,10 @@ app.post("/create-order", async (req, res) => {
   const amount = parseFloat(req.body.amount);
   const amountPaiseFromBody = parseInt(req.body.amountPaise, 10);
 
-  if ((!amount || amount <= 0) && (!amountPaiseFromBody || amountPaiseFromBody <= 0)) {
+  if (
+    (!amount || amount <= 0) &&
+    (!amountPaiseFromBody || amountPaiseFromBody <= 0)
+  ) {
     return res.status(400).json({ error: "Valid amount (INR) is required." });
   }
 
@@ -166,9 +189,12 @@ app.post("/create-order", async (req, res) => {
 
   try {
     const options = {
-      amount  : amountPaiseFromBody > 0 ? amountPaiseFromBody : Math.round(amount * 100),
+      amount:
+        amountPaiseFromBody > 0
+          ? amountPaiseFromBody
+          : Math.round(amount * 100),
       currency: "INR",
-      receipt : "receipt_" + Date.now(),
+      receipt: "receipt_" + Date.now(),
     };
 
     const order = await razorpay.orders.create(options);
@@ -177,7 +203,12 @@ app.post("/create-order", async (req, res) => {
     return res.json({ success: true, order });
   } catch (err) {
     console.error("[create-order] Razorpay error:", err);
-    return res.status(502).json({ error: err.error?.description || err.message || "Order creation failed." });
+    return res
+      .status(502)
+      .json({
+        error:
+          err.error?.description || err.message || "Order creation failed.",
+      });
   }
 });
 
@@ -245,7 +276,9 @@ const upload = multer({
       "image/webp",
     ];
     if (!allowedMimeTypes.includes(file.mimetype)) {
-      return cb(new Error("Invalid file type. Only JPG, PNG and WEBP are allowed."));
+      return cb(
+        new Error("Invalid file type. Only JPG, PNG and WEBP are allowed."),
+      );
     }
     cb(null, true);
   },
@@ -259,7 +292,7 @@ function uploadToCloudinary(buffer) {
       (error, result) => {
         if (error) return reject(error);
         resolve(result);
-      }
+      },
     );
     streamifier.createReadStream(buffer).pipe(stream);
   });
@@ -349,4 +382,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
   console.log(`✅ Server running on http://localhost:${PORT}`),
 );
-
