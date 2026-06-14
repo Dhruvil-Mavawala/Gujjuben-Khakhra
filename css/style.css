@@ -1,0 +1,2861 @@
+﻿@font-face {
+  font-family: "SauceTomato-Regular";
+  src: url("../fonts/Sauce Tomato.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Button hover effects */
+.component-2-primary-button,
+.component-2-primary-button2,
+.component-2-primary-button3 {
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease;
+}
+.component-2-primary-button:hover,
+.component-2-primary-button2:hover,
+.component-2-primary-button3:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* Nav link hover */
+.home,
+.about-us,
+.our-products,
+.deal-with-us {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.home:hover,
+.about-us:hover,
+.our-products:hover,
+.deal-with-us:hover {
+  opacity: 0.75;
+}
+
+/* Product card hover */
+.category {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.category:hover {
+  transform: translateY(-4px);
+}
+
+/* View all products link */
+.view-all-products,
+.view-all-products2 {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.view-all-products:hover,
+.view-all-products2:hover {
+  opacity: 0.75;
+}
+
+/* Section spacing — replaces gap on home-page */
+.home-page > .about-us2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.home-page > .frame-5484 {
+  margin-top: 0;
+}
+.page-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main-wrapper {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+.home-page,
+.home-page * {
+  box-sizing: border-box;
+}
+.home-page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: relative;
+  overflow: visible;
+}
+.hero-section {
+  flex-shrink: 0;
+  width: 100%;
+  height: 753px;
+  position: relative;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: visible;
+}
+.frame-5286 {
+  padding: 0px 7.4px 0px 7.4px;
+  display: flex;
+  flex-direction: column;
+  gap: 7.4px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  left: auto;
+  top: auto;
+}
+.frame-5283 {
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.55)
+  );
+  border-radius: 16px;
+  padding: 60px 37.01px 60px 37.01px;
+  display: flex;
+  flex-direction: column;
+  gap: 11.8px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 638px;
+  position: relative;
+}
+.taste-the-true-essence-of-gujarati-snacks {
+  color: var(--secondary-colour, #ef4136);
+  text-align: center;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 44px;
+  line-height: 67px;
+  font-weight: 400;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+.from-crispy-khakhra-to-soft-bhakhri-gujjuben-brings-you-authentic-homemade-flavors-made-with-love-tradition-and-pure-ingredients {
+  color: var(--main-colour, #ffffff);
+  text-align: center;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 500;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+.button-main {
+  flex-shrink: 0;
+  width: 144px;
+  height: 48px;
+  position: relative;
+  align-self: center;
+}
+.frame-1 {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.component-2-primary-button {
+  background: var(--primary-colour, #009848);
+  border-radius: 37px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 1.4px;
+  padding: 12px 39px 12px 39px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 48px;
+  position: relative;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.25);
+}
+.button {
+  color: var(--main-colour, #ffffff);
+  text-align: center;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  white-space: nowrap;
+}
+.frame-5471 {
+  background: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.nav-bar {
+  background: var(--secondary-colour, #ef4136);
+  border-radius: 16px;
+  padding: 15px 30px 15px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.union {
+  flex-shrink: 0;
+  width: 123px;
+  height: 65px;
+  position: relative;
+  overflow: visible;
+}
+.frame-5470 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.features-tab {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+}
+.home {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+.about-us {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+.our-products {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+.deal-with-us {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+.cart-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 134px;
+  position: relative;
+}
+.mdi-cart-outline {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+.about-us2 {
+  width: 100%;
+  padding: 56px 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.frame-5473 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  position: relative;
+}
+.frame-5472 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  position: relative;
+}
+.about-us3 {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+}
+.what-started-as-a-home-kitchen-passion-for-gujarati-flavors-has-grown-into-a-brand-trusted-by-families-everywhere {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  line-height: 1.45;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+.every-bite-of-gujjuben-s-snacks-reflects-the-same-love-and-care-that-a-gujarati-mom-puts-into-her-cooking-simple-pure-and-full-of-happiness {
+  color: #2b2b2b;
+  text-align: left;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 400;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+.button-main2 {
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+.frame-12 {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.component-2-primary-button2 {
+  background: var(--primary-colour, #009848);
+  border-radius: 37px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 1.4px;
+  padding: 12px 39px 12px 39px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 48px;
+  position: relative;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.25);
+}
+.button2 {
+  color: var(--main-colour, #ffffff);
+  text-align: center;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  white-space: nowrap;
+}
+.frame-5474 {
+  flex: 0 0 auto;
+  width: min(420px, 42%);
+  height: auto;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frame-5484 {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+}
+.frame-5477 {
+  background: var(--secondary-colour, #ef4136);
+  border-radius: 24px;
+  padding: 55.4px 50.36px 55.4px 50.36px;
+  display: flex;
+  flex-direction: column;
+  gap: 55.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.frame-5475 {
+  display: flex;
+  flex-direction: column;
+  gap: 30.22px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 836px;
+  position: relative;
+}
+.products-category {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 42px;
+  line-height: 66.73px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.at-gujjubens-we-specialize-in-authentic-gujarati-snacks-that-are-perfect-for-every-occasion-from-daily-snacking-to-festive-treats {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 35.25px;
+  font-weight: 500;
+  position: relative;
+  width: 100%;
+  max-width: 836px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5476 {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45.32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 10.07px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+}
+.frame-2 {
+  background: #ffffff;
+  border-radius: 20.14px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 402.88px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-3 {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.gemini-generated-image-egdf-0-vegdf-0-vegdf-1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.frame-4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+}
+.khakhra {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 25.179855346679688px;
+  line-height: 35.25px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.view-all-products {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 17.625898361206055px;
+  line-height: 30.22px;
+  font-weight: 500;
+  text-decoration: underline;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.view-all-products2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 17.625898361206055px;
+  line-height: 30.22px;
+  font-weight: 500;
+  text-decoration: underline;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5497 {
+  padding: 0px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5496 {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+.frame-5311 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.why-khakhra {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 52px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-5499 {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.why-khakhra-1 {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 1122/588;
+}
+.frame-5483 {
+  background: #2f2f2f;
+  border-radius: 16px;
+  padding: 40px 50px 40px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.frame-5482 {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.why-our-khakhra {
+  color: #ffffff;
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  position: relative;
+}
+.at-gujjuben-every-khakhra-and-bhakhri-is-made-with-the-same-warmth-care-and-authenticity-that-reminds-you-of-home {
+  color: #ffffff;
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+}
+.frame-5481 {
+  padding: 56px 30px 28px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5478 {
+  display: flex;
+  flex-direction: row;
+  gap: 14.06px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.palm-oil-free-sign-icon-1 {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  position: relative;
+  overflow: visible;
+}
+.palm-oil-free {
+  color: #ffffff;
+  text-align: left;
+  font-family: "InterTight-Bold", sans-serif;
+  font-size: 22.50000762939453px;
+  font-weight: 700;
+  position: relative;
+}
+.frame-5479 {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.group-22 {
+  flex-shrink: 0;
+  width: 69.44px;
+  height: 69.44px;
+  position: relative;
+  overflow: visible;
+}
+.no-added-preservatives {
+  color: #ffffff;
+  text-align: left;
+  font-family: "InterTight-Bold", sans-serif;
+  font-size: 22.399999618530273px;
+  font-weight: 700;
+  position: relative;
+}
+.frame-5480 {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.wheat-grains-7018753-1 {
+  flex-shrink: 0;
+  width: 77px;
+  height: 77px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.no-use-of-refined-flour {
+  color: #ffffff;
+  text-align: left;
+  font-family: "InterTight-Bold", sans-serif;
+  font-size: 22.399999618530273px;
+  font-weight: 700;
+  position: relative;
+}
+.frame-5490 {
+  padding: 0px 0px 89px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+.frame-54832 {
+  background: var(--secondary-colour, #ef4136);
+  border-radius: 16px;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.frame-5485 {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+.frame-5486 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.worldwide-export {
+  color: #ffffff;
+  text-align: left;
+  font-family: "InterTight-ExtraBold", sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  position: relative;
+  align-self: stretch;
+}
+.export-market-overview {
+  color: #ffffff;
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 52px;
+  line-height: 180%;
+  font-weight: 400;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.authentic-roasted-goodness-bringing-the-timeless-taste-of-gujarat-to-your-table {
+  color: #ffffff;
+  text-align: left;
+  font-family: "InterTight-ExtraBold", sans-serif;
+  font-size: 24px;
+  line-height: 180%;
+  font-weight: 800;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+.button-main3 {
+  flex-shrink: 0;
+  width: 192px;
+  height: 48px;
+  position: relative;
+}
+.export-market-1 {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 660px;
+  height: auto;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 659/394;
+}
+.frame-5358 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+.frame-5353 {
+  display: flex;
+  flex-direction: column;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5326 {
+  padding: 0px 7.29px 0px 7.29px;
+  display: flex;
+  flex-direction: column;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5278 {
+  border-radius: 10.94px;
+  border-width: 0;
+  border-style: none;
+  padding: 72.92px 109.38px 72.92px 109.38px;
+  display: flex;
+  flex-direction: row;
+  gap: 51.04px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+.frame-21 {
+  display: flex;
+  flex-direction: column;
+  gap: 14.58px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.frame-23 {
+  display: flex;
+  flex-direction: column;
+  gap: 3.65px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.contact-us {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+.let-s-have-deal {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 59.79166793823242px;
+  line-height: 72.92px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+.contact-us-for-dealership-super-stockist-and-wholesale-orders {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-SemiBold", sans-serif;
+  font-size: 17.5px;
+  line-height: 180%;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+.frame-96 {
+  display: flex;
+  flex-direction: column;
+  gap: 7.29px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.frame-94 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 21.88px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.full-name {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-5325 {
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-95 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 21.88px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.phone {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-962 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 21.88px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.email {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-97 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 109.38px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.message {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+.button-main4 {
+  flex-shrink: 0;
+  width: 106.31px;
+  height: 35.44px;
+  position: relative;
+}
+.frame-13 {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7.38px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.component-2-primary-button3 {
+  background: var(--primary-colour, #009848);
+  border-radius: 27.32px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 1.03px;
+  padding: 8.86px 28.79px 8.86px 28.79px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.38px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 35.44px;
+  position: relative;
+  box-shadow: 0px 2.21px 0px 0px rgba(0, 0, 0, 0.25);
+}
+.button3 {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+}
+.group-80 {
+  display: none;
+}
+.frame-5352 {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 30px;
+  position: relative;
+  left: auto;
+  top: auto;
+}
+.instagram {
+  flex-shrink: 0;
+  width: 28.8px;
+  height: 28.8px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+.join-us {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 180%;
+  font-weight: 400;
+  position: relative;
+}
+.gujjuben-s-khakhra {
+  color: var(--white, #ffffff);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 180%;
+  font-weight: 400;
+  position: relative;
+  -webkit-text-stroke: 3.200000047683716px var(--secondary-colour, #ef4136);
+}
+.frame-5492 {
+  background: #ffffff;
+  padding: 84px 105px 84px 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.frame-5363 {
+  display: flex;
+  flex-direction: column;
+  gap: 33.6px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5368 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5345 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5339 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.corporate-office-production-unit {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5338 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-395009 {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  width: 206.64px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5340 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.sales-and-marketing-office {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5337 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-3950092 {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  width: 215px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-53452 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.contact-us2 {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5365 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5336 {
+  display: flex;
+  flex-direction: column;
+  gap: 10.92px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5333 {
+  display: flex;
+  flex-direction: row;
+  gap: 2.52px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5361 {
+  display: flex;
+  flex-direction: row;
+  gap: 4.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5362 {
+  display: flex;
+  flex-direction: row;
+  gap: 5.04px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.mail {
+  flex-shrink: 0;
+  width: 16.8px;
+  height: 16.8px;
+  position: relative;
+  overflow: hidden;
+}
+.group-54 {
+  height: auto;
+  position: absolute;
+  left: 0.49px;
+  top: 2.62px;
+  overflow: visible;
+}
+.link-instagram {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-53382 {
+  display: flex;
+  flex-direction: column;
+  gap: 10.92px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.group-55 {
+  height: auto;
+  position: absolute;
+  left: 0.68px;
+  top: 0.95px;
+  overflow: visible;
+}
+.frame-53622 {
+  display: flex;
+  flex-direction: row;
+  gap: 4.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5344 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.links {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5328 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.link-contact-us {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link-about-us {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link-privacy-policy {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.deal-with-us2 {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  width: 73.08px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.line-3 {
+  margin-top: -0.84px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.84px 0 0 0;
+  opacity: 0.2;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 0px;
+  position: relative;
+}
+.frame-5491 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+}
+.frame-5351 {
+  display: flex;
+  flex-direction: row;
+  gap: 67.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.union2 {
+  flex-shrink: 0;
+  width: 206.64px;
+  height: 109.2px;
+  position: relative;
+  overflow: visible;
+}
+.frame-5367 {
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.certified-brand-by {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5366 {
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5461 {
+  border-radius: 126px;
+  padding: 10.92px;
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 89.88px;
+  height: 89.88px;
+  position: relative;
+}
+.frame-5457 {
+  flex-shrink: 0;
+  width: 67.2px;
+  height: 33.08px;
+  position: relative;
+  overflow: visible;
+}
+.frame-53672 {
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5458 {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+.group {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+.msme-logo-2 {
+  flex-shrink: 0;
+  width: 95px;
+  height: 83px;
+  position: relative;
+  overflow: hidden;
+}
+.group2 {
+  width: 85.23%;
+  height: 97.3%;
+  position: absolute;
+  right: 8.05%;
+  left: 6.72%;
+  bottom: -96.22%;
+  top: 98.93%;
+  transform: translate(0px, -80.76px);
+  overflow: visible;
+}
+.line-2 {
+  margin-top: -0.84px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.84px 0 0 0;
+  opacity: 0.2;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 0px;
+  position: relative;
+}
+.frame-5354 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.gujjuben-s-khakhra-brand-all-rights-reserved {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 12px;
+  line-height: 13.44px;
+  letter-spacing: -0.12px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5256 {
+  display: flex;
+  flex-direction: row;
+  gap: 4.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.socials {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 11.760000228881836px;
+  line-height: 13.44px;
+  letter-spacing: -0.12px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.mdi-instagram {
+  flex-shrink: 0;
+  width: 20.16px;
+  height: 20.16px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+.ic-baseline-facebook {
+  flex-shrink: 0;
+  width: 20.16px;
+  height: 20.16px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+
+/* Form input styles */
+.frame-94 input,
+.frame-95 input,
+.frame-962 input,
+.frame-97 textarea,
+.input-name,
+.input-phone,
+.input-email,
+.input-message {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--secondary-colour, #ef4136);
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.58px;
+  font-weight: 400;
+  resize: none;
+}
+.frame-94 input::placeholder,
+.frame-95 input::placeholder,
+.frame-962 input::placeholder,
+.frame-97 textarea::placeholder {
+  color: var(--secondary-colour, #ef4136);
+  opacity: 0.7;
+}
+/* Scoped to form inputs only — does NOT affect .deal-submit-btn */
+.frame-96 button[type="submit"],
+.frame-12 button[type="submit"] {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+/* ── Cart badge ───────────────────────────────────────────────────────────── */
+.cart-count {
+  display: none;
+  background: #ffffff;
+  color: #009848;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 50%;
+  min-width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  line-height: 1;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.component-2-primary-button {
+  position: relative;
+}
+
+/* ── Let's have deal — shared layout ─────────────────────────────────────── */
+.contact-section {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+
+  border: 1.5px solid rgba(239, 65, 54, 0.3);
+  border-radius: 20px;
+
+  padding: 48px 56px 0;
+  display: flex;
+  gap: 48px;
+
+  background: #ffffff;
+}
+
+.contact-left {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.contact-us-label {
+  color: #ef4136;
+  font-family: var(--font-brand, "SauceTomato", serif);
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-heading {
+  color: #ef4136;
+  font-family: var(--font-brand, "SauceTomato", serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.contact-subtext {
+  color: #555;
+  font-family: var(--font, "Poppins", sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+.contact-mascot {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin-top: 16px;
+  align-self: flex-start;
+}
+
+.contact-right {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 48px;
+}
+
+.deal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.deal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.deal-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 20px 0;
+    gap: 28px;
+    border-radius: 16px;
+  }
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+  .contact-right {
+    padding-bottom: 32px;
+  }
+  .deal-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-mascot {
+    max-width: 200px;
+  }
+  .deal-submit-btn {
+    width: 100% !important;
+  }
+}
+
+.deal-input {
+  width: 100%;
+  border: 1.5px solid #ef4136;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: var(--font, "Poppins", "Segoe UI", sans-serif);
+  font-size: 16px; /* ≥16px prevents iOS zoom */
+  color: #1a1a1a;
+  background: #ffffff;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  box-sizing: border-box;
+  min-height: 48px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.deal-input::placeholder {
+  color: rgba(239, 65, 54, 0.55);
+}
+.deal-input:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(239, 65, 54, 0.1);
+  background: #fff;
+}
+
+.deal-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.deal-submit-btn {
+  align-self: flex-start;
+  background: #009848 !important;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 40px;
+  font-family: var(--font, "Poppins", "Segoe UI", sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 152, 72, 0.28);
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.deal-submit-btn:hover:not(:disabled) {
+  background: #007a3a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 152, 72, 0.36);
+}
+.deal-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 24px 0;
+    gap: 32px;
+  }
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+  .contact-right {
+    padding-bottom: 32px;
+  }
+  .deal-row {
+    flex-direction: column;
+  }
+}
+
+/* ── Join us Instagram row fix ───────────────────────────────────────────── */
+.frame-5352,
+.frame-5359 {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.join-us,
+.gujjuben-s-khakhra,
+.gujjuben-s-khakhra2 {
+  white-space: nowrap;
+}
+
+/* ── Join us — text readability fix ─────────────────────────────────────── */
+.join-us {
+  font-family: "Inter", "InterTight-Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ef4136;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  white-space: nowrap;
+}
+
+.gujjuben-s-khakhra,
+.gujjuben-s-khakhra2 {
+  font-family: "Inter", "InterTight-Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ef4136;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  white-space: nowrap;
+}
+
+/* navbar fixed wrap styles moved to css/navbar.css */
+
+/* ── Fix hero white gap (navbar is now fixed, top:115px is obsolete) ── */
+.frame-5286 {
+  top: 0 !important;
+  padding: 0 !important;
+}
+
+/* ── Design System overrides: Home page ──────── */
+body {
+  background: #ffffff;
+}
+
+/* Hero white-gap fix */
+.frame-5286 {
+  top: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hero text */
+.taste-the-true-essence-of-gujarati-snacks {
+  font-family: var(--font, "Poppins", sans-serif) !important;
+  font-size: clamp(26px, 4vw, 52px) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  color: #fff !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4) !important;
+}
+.from-crispy-khakhra-to-soft-bhakhri-gujjuben-brings-you-authentic-homemade-flavors-made-with-love-tradition-and-pure-ingredients {
+  font-family: var(--font, "Poppins", sans-serif) !important;
+  font-size: clamp(14px, 1.5vw, 18px) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  line-height: 1.65 !important;
+}
+
+/* Category cards */
+.category {
+  border-radius: var(--r-xl, 20px) !important;
+  box-shadow: var(--sh-sm, 0 2px 12px rgba(0, 0, 0, 0.08)) !important;
+  transition:
+    box-shadow 0.25s,
+    transform 0.25s !important;
+  background: var(--bg-card, #fff) !important;
+  overflow: hidden;
+}
+.category:hover {
+  box-shadow: var(--sh-md, 0 4px 20px rgba(0, 0, 0, 0.12)) !important;
+  transform: translateY(-5px) !important;
+}
+
+/* CTA buttons */
+.component-2-primary-button,
+.component-2-primary-button2,
+.component-2-primary-button3 {
+  background: var(--green, #0b8f3c) !important;
+  border-radius: var(--r-pill, 50px) !important;
+  border: none !important;
+  box-shadow: var(--sh-grn, 0 4px 16px rgba(11, 143, 60, 0.28)) !important;
+  transition:
+    transform 0.15s,
+    box-shadow 0.2s,
+    filter 0.15s !important;
+}
+.component-2-primary-button:hover,
+.component-2-primary-button2:hover,
+.component-2-primary-button3:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.08) !important;
+}
+
+/* Section headings */
+.products-category {
+  font-family: var(--font-brand, "SauceTomato", serif) !important;
+  color: var(--red, #ef3d2f) !important;
+}
+.why-our-khakhra,
+.about-us3 {
+  font-family: var(--font, "Poppins", sans-serif) !important;
+  font-weight: 800 !important;
+  color: var(--text, #1a1a1a) !important;
+}
+
+/* ═══════════════════════════════════════════════
+   HERO CAROUSEL — Premium redesign
+   ═══════════════════════════════════════════════ */
+
+/* ── Slider container ────────────────────────── */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 88vh;
+  min-height: 520px;
+  max-height: 780px;
+  overflow: hidden;
+  background: #111;
+
+  border-radius: 30px;
+}
+
+/* ── Each slide ──────────────────────────────── */
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  display: flex;
+  align-items: center;
+}
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* ── Dark gradient overlay ───────────────────── */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.52) 50%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  z-index: 1;
+}
+
+/* ── Slide content ───────────────────────────── */
+.slide-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+  padding-top: 20px;
+  padding-left: 80px; /* clears the left arrow (48px wide + 24px gap) */
+  animation: heroFadeUp 0.7s ease both;
+}
+.slide:not(.active) .slide-content {
+  animation: none;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tag pill */
+.slide-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-family: var(--font, "Poppins", sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+/* Headline */
+.slide-title {
+  font-family: var(--font-brand, "SauceTomato", serif);
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Subtext */
+.slide-sub {
+  font-family: var(--font, "Poppins", sans-serif);
+  font-size: clamp(14px, 1.6vw, 18px);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+/* CTA buttons */
+.slide-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--green, #0b8f3c);
+  color: #fff;
+  border-radius: 50px;
+  font-family: var(--font, "Poppins", sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(11, 143, 60, 0.4);
+  transition:
+    transform 0.15s,
+    box-shadow 0.2s,
+    filter 0.15s;
+}
+.hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(11, 143, 60, 0.48);
+  filter: brightness(1.08);
+}
+
+.hero-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 28px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  font-family: var(--font, "Poppins", sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.hero-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── Navigation dots ─────────────────────────── */
+/* .slider-dots {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 0.25s,
+    transform 0.25s,
+    width 0.25s;
+}
+.dot.active {
+  background: #fff;
+  width: 28px;
+  border-radius: 5px;
+  transform: none;
+} */
+
+/* ── Arrow buttons ───────────────────────────── */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+}
+.slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-50%) scale(1.08);
+}
+.arrow-prev {
+  left: 24px;
+}
+.arrow-next {
+  right: 24px;
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 991px) {
+  .hero-slider {
+    height: clamp(360px, 62vh, 540px);
+    min-height: 360px;
+    max-height: none;
+
+    border-radius: 0;
+  }
+
+  .hero-section {
+    border-radius: 0;
+  }
+
+  .slide-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.72) 100%
+    ) !important;
+  }
+
+  .slide-content {
+    padding: 0 24px !important;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .slide-title,
+  .slide-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .slide-sub {
+    max-width: 100%;
+  }
+
+  .slide-actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-ghost {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .slider-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slider {
+    min-height: 340px;
+  }
+  .slide-title {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+  .slide-sub {
+    font-size: 15px;
+  }
+}
+
+/* ── Popular Categories heading: white on red bg */
+.products-category {
+  color: #ffffff !important;
+}
+.at-gujjubens-we-specialize-in-authentic-gujarati-snacks-that-are-perfect-for-every-occasion-from-daily-snacking-to-festive-treats {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+/* ── Category cards — image + name overlay ───── */
+
+/* Grid container */
+#category-container,
+.frame-5476 {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  width: 100% !important;
+  height: auto !important;
+  padding: 8px 0 !important;
+}
+
+/* Card wrapper */
+.category {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease !important;
+  background: #1a1a1a !important;
+  aspect-ratio: 3 / 4 !important;
+  position: relative !important;
+}
+.category:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Image wrapper fills card */
+.cat-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Product image */
+.cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.category:hover .cat-img {
+  transform: scale(1.07);
+}
+
+/* Dark gradient overlay — bottom heavy for text readability */
+.cat-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.02) 30%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+  border-radius: 16px;
+}
+
+/* Text label at bottom */
+.cat-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Category name */
+.cat-name {
+  font-family: var(--font-brand, "SauceTomato", serif);
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+/* CTA text */
+.cat-cta {
+  font-family: var(--font, "Poppins", sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.3px;
+  display: block;
+  transition: color 0.2s;
+}
+.category:hover .cat-cta {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  #category-container,
+  .frame-5476 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+}
+
+.why-our-khakhra {
+  color: #ffffff !important;
+}
+
+/* ── Footer functional links ─────────────────────────────────────────────── */
+
+/* Address links — inherit the existing red color, no underline by default */
+a._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-395009,
+a._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-3950092 {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-395009:hover,
+a._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-3950092:hover {
+  color: #009848;
+}
+
+/* Email + phone links — inherit link-instagram styling */
+a.link-instagram {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a.link-instagram:hover {
+  color: #009848;
+}
+
+/* Social icon links */
+.frame-5256 a {
+  display: inline-flex;
+  align-items: center;
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
+}
+.frame-5256 a:hover {
+  opacity: 0.75;
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════
+   GLOBAL RESPONSIVE — Home / shared sections
+   ═══════════════════════════════════════════════ */
+
+/* Global image safety */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Tablet (≤ 1024px) ───────────────────────── */
+@media (max-width: 1024px) {
+  .home-page {
+    padding: 0;
+    gap: 0;
+  }
+
+  /* About Us */
+  .about-us2 {
+    flex-direction: column;
+    padding: 32px 16px;
+    gap: 28px;
+  }
+  .frame-5473,
+  .frame-5472 {
+    width: 100%;
+  }
+  .frame-5474 {
+    width: 100%;
+    height: auto;
+    max-width: 480px;
+    align-self: center;
+  }
+  .every-bite-of-gujjuben-s-snacks-reflects-the-same-love-and-care-that-a-gujarati-mom-puts-into-her-cooking-simple-pure-and-full-of-happiness {
+    width: 100%;
+  }
+
+  /* Why Our Khakhra */
+  .frame-5483 {
+    width: 100%;
+    padding: 32px 24px;
+  }
+  .frame-5481 {
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 0 16px;
+  }
+
+  /* Export section */
+  .frame-54832 {
+    width: 100%;
+    padding: 32px 24px;
+    flex-direction: column;
+  }
+  .frame-5485 {
+    width: 100%;
+  }
+  .export-market-1 {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Footer */
+  .frame-5492 {
+    width: 100%;
+    padding: 48px 24px;
+  }
+  .frame-5491 {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .frame-5345 {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+
+/* ── Mobile (≤ 768px) ────────────────────────── */
+@media (max-width: 768px) {
+  .home-page {
+    padding: 0;
+    gap: 0;
+  }
+
+  /* Hero */
+  .hero-section {
+    height: auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  /* About Us */
+  .about-us2 {
+    padding: 24px 12px;
+    gap: 20px;
+  }
+  .what-started-as-a-home-kitchen-passion-for-gujarati-flavors-has-grown-into-a-brand-trusted-by-families-everywhere {
+    font-size: 22px !important;
+  }
+
+  /* Popular Categories */
+  .frame-5477 {
+    padding: 28px 16px;
+  }
+  .products-category {
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+  }
+  .at-gujjubens-we-specialize-in-authentic-gujarati-snacks-that-are-perfect-for-every-occasion-from-daily-snacking-to-festive-treats {
+    font-size: 16px !important;
+  }
+
+  /* Why Our Khakhra */
+  .frame-5483 {
+    padding: 24px 16px;
+  }
+  .why-our-khakhra {
+    font-size: 28px !important;
+  }
+  .frame-5481 {
+    padding: 20px 0 12px;
+    gap: 20px;
+  }
+  .frame-5496 {
+    width: 100%;
+    padding: 16px;
+  }
+  .why-khakhra-1 {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Export */
+  .frame-54832 {
+    padding: 24px 16px;
+    gap: 20px;
+  }
+  .export-market-overview {
+    font-size: 36px !important;
+    height: auto !important;
+  }
+
+  /* Footer info */
+  .frame-5492 {
+    padding: 32px 16px;
+  }
+  .frame-5345 {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .frame-5491 {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .frame-5354 {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .frame-5351 {
+    gap: 20px;
+  }
+  .union2 {
+    width: 140px;
+    height: auto;
+  }
+}
+
+/* ── Small mobile (≤ 480px) ──────────────────── */
+@media (max-width: 480px) {
+  .home-page {
+    padding: 0;
+    gap: 0;
+  }
+  .about-us2 {
+    padding: 20px 8px;
+  }
+  .frame-5477 {
+    padding: 20px 12px;
+  }
+  .frame-5483 {
+    padding: 20px 12px;
+  }
+  .frame-5492 {
+    padding: 24px 12px;
+  }
+  .frame-5474 {
+    max-width: 100%;
+  }
+  .frame-5481 {
+    flex-direction: column;
+  }
+  .frame-5478,
+  .frame-5479,
+  .frame-5480 {
+    gap: 10px;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE OVERRIDES — appended by audit
+   ═══════════════════════════════════════════════ */
+
+/* Fix all Figma fixed widths */
+.home-page,
+.frame-5496,
+.frame-5492,
+.frame-5483,
+.frame-54832,
+.frame-5358,
+.frame-5490 {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Hero */
+.hero-section {
+  height: auto;
+  min-height: 240px;
+}
+
+.frame-5286 {
+  width: 100% !important;
+  position: relative !important;
+  left: 0 !important;
+  top: auto !important;
+  padding: 0 !important;
+}
+
+.taste-the-true-essence-of-gujarati-snacks,
+.from-crispy-khakhra-to-soft-bhakhri-gujjuben-brings-you-authentic-homemade-flavors-made-with-love-tradition-and-pure-ingredients {
+  width: 100% !important;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .frame-5283 {
+    height: auto !important;
+    min-height: 260px !important;
+    padding: 32px 16px !important;
+  }
+
+  .frame-5481 {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 16px 0 !important;
+    gap: 20px !important;
+  }
+
+  .frame-5478,
+  .frame-5479,
+  .frame-5480 {
+    flex-shrink: 1 !important;
+  }
+
+  /* Prevent footer elements from overflowing */
+  .frame-5352,
+  .frame-5359 {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+  }
+
+  .why-khakhra-1 {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .frame-5496 {
+    padding: 20px 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .taste-the-true-essence-of-gujarati-snacks {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+  }
+}
+/* Hero Slider Dots */
+
+/* .slider-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 20;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  width: 34px;
+  border-radius: 20px;
+  background: #ffffff;
+} */
+
+.dot:hover {
+  background: #ffffff;
+}
+html,
+body,
+.page-wrapper,
+.main-wrapper,
+.home-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}

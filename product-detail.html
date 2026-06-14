@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/design-system.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product - Gujjuben's Khakhra</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css" />
+  <link rel="stylesheet" href="css/product-detail.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+<div class="product-page">
+
+  <!-- Navbar -->
+  <div class="frame-5471">
+    <div class="nav-bar">
+      <img class="union" src="assets/images/union0.svg" />
+      <div class="frame-5470">
+        <div class="features-tab">
+          <div class="home"         onclick="location.href='/'"       style="cursor:pointer">Home</div>
+          <div class="about-us"     onclick="location.href='/about'"       style="cursor:pointer">About us</div>
+          <div class="our-products nav-active" onclick="location.href='/productlist'" style="cursor:pointer">Our Products</div>
+          <div class="deal-with-us" onclick="location.href='/deal'" style="cursor:pointer">Deal with us</div>
+          <div class="my-orders"    onclick="goToOrders()"                     style="cursor:pointer">My Orders</div>
+        </div>
+        <div class="cart-button" onclick="location.href='/cart'" style="cursor:pointer">
+          <div class="component-2-primary-button">
+            <img class="mdi-cart-outline" src="assets/images/mdi-cart-outline0.svg" />
+            <span id="cart-count" class="cart-count">0</span>
+          </div>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product grid: image + buy section -->
+  <div class="grid">
+    <div class="gallery">
+      <div class="main">
+        <img class="image" id="detail-img" src="" alt="Product" />
+      </div>
+      <div class="thumbnails" id="detail-thumbnails"></div>
+    </div>
+
+    <div class="buy-now-section">
+      <div class="main2">
+        <div class="top">
+          <div class="frame-168">
+            <div class="khakhra"     id="detail-category">Loading...</div>
+            <div class="sp-plain-khakhra" id="detail-name"></div>
+            <div class="made-from-pure-whole-wheat-flour-with-no-artificial-flavors"
+                 id="detail-desc"></div>
+          </div>
+          <div class="frame-169">
+            <div class="price">
+              <div class="price3" id="detail-price"></div>
+            </div>
+          </div>
+          <div class="product-rating">
+            <div class="stars" id="detail-stars">
+              <span style="color:#f5a623;font-size:16px;">★★★★★</span>
+            </div>
+            <div class="text" id="detail-review-count">0 Reviews</div>
+          </div>
+          <div class="frame-167">
+            <div class="button-label">Quantity</div>
+            <div class="qty-row">
+              <button class="qty-ctrl-btn" id="qty-minus">−</button>
+              <span class="qty-val" id="qty-display">1</span>
+              <button class="qty-ctrl-btn" id="qty-plus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart action area -->
+        <div class="cart-action-area">
+          <button class="btn-add-cart" id="add-to-cart-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            <span class="btn-label">Add to Cart</span>
+          </button>
+          <a class="btn-view-cart" id="view-cart-link" href="/cart" style="display:none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            View Cart
+          </a>
+        </div>
+
+        <!-- In-cart indicator -->
+        <div class="in-cart-badge" id="in-cart-badge" style="display:none">
+          ✅ Already in your cart
+        </div>
+
+        <div class="us-ps">
+          <div class="frame-161">
+            <div class="button-label2">🚚 Estimated Delivery: 2–3 days of order</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- You might also like -->
+  <div class="related-section">
+    <div class="related-heading">You might also like</div>
+    <div class="related-grid" id="related-container">
+      <!-- injected by JS -->
+    </div>
+  </div>
+
+  <!-- Shop by Category -->
+  <div class="category-section">
+    <div class="category-section-header">Shop by Category</div>
+    <div class="category-grid" id="category-grid">
+      <!-- injected by JS -->
+    </div>
+  </div>
+
+  <!-- Reviews section -->
+  <div class="reviews-wrapper">
+    <div class="reviews-left">
+      <h2 class="reviews-heading">Customer Reviews</h2>
+      <div class="rating-summary">
+        <div class="rating-avg" id="rating-avg">—</div>
+        <div class="rating-stars-avg" id="rating-stars-avg"></div>
+        <div class="rating-count" id="rating-count">No reviews yet</div>
+      </div>
+      <div class="review-list" id="review-list">
+        <div class="review-empty">Be the first to review this product.</div>
+      </div>
+    </div>
+    <div class="reviews-right">
+      <h3 class="write-heading">Write a Review</h3>
+      <form class="review-form" id="review-form" novalidate>
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input class="form-input" id="review-name" type="text" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Rating</label>
+          <div class="star-picker" id="star-picker">
+            <span class="star" data-val="1">★</span>
+            <span class="star" data-val="2">★</span>
+            <span class="star" data-val="3">★</span>
+            <span class="star" data-val="4">★</span>
+            <span class="star" data-val="5">★</span>
+          </div>
+          <input type="hidden" id="review-rating" value="0" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Review</label>
+          <textarea class="form-input form-textarea" id="review-text" placeholder="Share your experience..."></textarea>
+        </div>
+        <button type="submit" class="review-submit-btn">Submit Review</button>
+        <div class="review-msg" id="review-msg"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer contact -->
+  <div class="frame-5511">
+    <!-- Let's have deal -->
+    <div class="contact-section" role="complementary" aria-label="Contact Us">
+      <div class="contact-left">
+        <div class="contact-us-label">Contact Us</div>
+        <h2 class="contact-heading">Let's have deal</h2>
+        <div class="contact-subtext">
+          Contact us for Dealership, Super stockist and wholesale orders.
+        </div>
+        <img class="contact-mascot" src="assets/images/lets have deal.svg" alt="Gujjuben's Khakhra contact mascot" loading="lazy" />
+      </div>
+      <div class="contact-right">
+        <form id="deal-form" class="deal-form" novalidate aria-label="Contact form">
+          <div class="deal-field">
+            <label for="contact-name" class="visually-hidden">Full Name</label>
+            <input class="input-name deal-input" id="contact-name" type="text" placeholder="Full Name" required autocomplete="name" />
+          </div>
+          <div class="deal-row">
+            <label for="contact-phone" class="visually-hidden">Phone</label>
+            <input class="input-phone deal-input" id="contact-phone" type="tel" placeholder="Phone" required autocomplete="tel" />
+            <label for="contact-email" class="visually-hidden">Email</label>
+            <input class="input-email deal-input" id="contact-email" type="email" placeholder="Email" required autocomplete="email" />
+          </div>
+          <div class="deal-field">
+            <label for="contact-message" class="visually-hidden">Message</label>
+            <textarea class="input-message deal-input deal-textarea" id="contact-message" placeholder="Message"></textarea>
+          </div>
+          <button type="submit" class="deal-submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer info -->
+    <div class="frame-5493">
+      <div class="frame-5363">
+        <div class="frame-5368">
+          <div class="frame-5345">
+            <div class="frame-5339">
+              <div class="corporate-office-production-unit">Corporate Office &amp;<br />Production Unit</div>
+              <div class="frame-5338">
+                <a class="_52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-395009"
+                   href="https://maps.google.com/?q=52+Green+Paladia+Opp+Raj+World+Palanpur+Canal+Road+Surat+Gujarat+India+395009"
+                   target="_blank" rel="noopener noreferrer" style="text-decoration:none;cursor:pointer;">
+                  52, Green Paladia, Opp. Raj World, Palanpur Canal Road, Palanpur, Surat, Gujarat, India - 395009
+                </a>
+              </div>
+            </div>
+            <div class="frame-5340">
+              <div class="sales-and-marketing-office">Sales And Marketing Office</div>
+              <div class="frame-5337">
+                <a class="_52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-3950092"
+                   href="https://maps.google.com/?q=52+Green+Paladia+Opp+Raj+World+Palanpur+Canal+Road+Surat+Gujarat+India+395009"
+                   target="_blank" rel="noopener noreferrer" style="text-decoration:none;cursor:pointer;">
+                  52, Green Paladia, Opp. Raj World, Palanpur Canal Road, Palanpur, Surat, Gujarat, India - 395009
+                </a>
+              </div>
+            </div>
+            <div class="frame-53452">
+              <div class="contact-us2">Contact Us</div>
+              <div class="frame-5365">
+                <div class="frame-5336">
+                  <div class="frame-5333"><div class="frame-5361"><div class="frame-5362">
+                    <div class="mail"><img class="group-54" src="assets/images/group-540.svg" /></div>
+                    <a class="link-instagram" href="mailto:gujjubenskhakhra@gmail.com" style="text-decoration:none;cursor:pointer;">gujjubenskhakhra@gmail.com</a>
+                  </div></div></div>
+                </div>
+                <div class="frame-53382">
+                  <div class="frame-5333"><div class="frame-5361"><div class="frame-5362">
+                    <div class="mail"><img class="group-55" src="assets/images/group-550.svg" /></div>
+                    <a class="link-instagram" href="tel:+919033516226" style="text-decoration:none;cursor:pointer;">+91 9033516226</a>
+                  </div></div></div>
+                  <div class="frame-53622"><div class="frame-5362">
+                    <a class="link-instagram" href="tel:+917096716226" style="text-decoration:none;cursor:pointer;">+91 7096716226</a>
+                  </div></div>
+                </div>
+              </div>
+            </div>
+            <div class="frame-5344">
+              <div class="links">Links</div>
+              <div class="frame-5328">
+                <div class="link-contact-us"    onclick="location.href='/'"       style="cursor:pointer">Home</div>
+                <div class="link-about-us"      onclick="location.href='/about'"       style="cursor:pointer">About Us</div>
+                <div class="link-privacy-policy" onclick="location.href='/productlist'" style="cursor:pointer">Our Products</div>
+                <div class="deal-with-us2"       onclick="location.href='/deal'"        style="cursor:pointer">Deal with us</div>
+                <div class="link-contact-us"     onclick="goToOrders()"                     style="cursor:pointer">My Orders</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line-3"></div>
+        <div class="frame-5491">
+          <div class="frame-5351"><img class="union2" src="assets/images/union1.svg" /></div>
+          <div class="frame-5367">
+            <div class="certified-brand-by">Certified Brand by</div>
+            <div class="frame-5366"><div class="frame-5461"><img class="frame-5457" src="assets/images/frame-54570.svg" /></div></div>
+            <div class="frame-53672"><div class="frame-5458"><img class="group" src="assets/images/group0.svg" /></div></div>
+            <div class="msme-logo-2"><img class="group2" src="assets/images/MSME_Logo 2.svg" /></div>
+          </div>
+        </div>
+        <div class="line-2"></div>
+        <div class="frame-5354">
+          <div class="gujjuben-s-khakhra-brand-all-rights-reserved">Gujjuben's Khakhra Brand. All Rights Reserved</div>
+          <div class="frame-5256">
+            <div class="socials">Socials</div>
+            <a href="https://www.instagram.com/gujjubens_khakhra" target="_blank" rel="noopener noreferrer" style="display:inline-flex;cursor:pointer;">
+              <img class="mdi-instagram" src="assets/images/mdi-instagram0.svg" />
+            </a>
+            <a href="https://www.facebook.com/gujjubenskhakhra" target="_blank" rel="noopener noreferrer" style="display:inline-flex;cursor:pointer;">
+              <img class="ic-baseline-facebook" src="assets/images/ic-baseline-facebook0.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <script src="js/config.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/cart-store.js"></script>
+  <script src="js/product-detail.js"></script>
+  <script src="js/cart-badge.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/contact-form.js"></script>
+  <script>
+    function goToOrders() {
+      if (localStorage.getItem("user")) { window.location.href = "/orders"; }
+      else { window.location.href = "/login"; }
+    }
+  </script>
+</body>
+</html>

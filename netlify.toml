@@ -1,0 +1,120 @@
+# ─────────────────────────────────────────────────────────────────
+#  netlify.toml  –  Gujjuben's Khakhra (Static Frontend)
+#  Backend runs separately on Render (server.js)
+#  This file configures ONLY the Netlify static deployment.
+# ─────────────────────────────────────────────────────────────────
+
+[build]
+  publish = "."
+  # No build command — pure static HTML/CSS/JS
+
+# ── Security Headers ──────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# ── Clean URL rewrites (200 = serve file, URL stays clean) ────────
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin-orders"
+  to = "/admin-orders.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+
+[[redirects]]
+  from = "/auth"
+  to = "/auth.html"
+  status = 200
+
+[[redirects]]
+  from = "/cart"
+  to = "/cart.html"
+  status = 200
+
+[[redirects]]
+  from = "/category-admin"
+  to = "/category-admin.html"
+  status = 200
+
+[[redirects]]
+  from = "/checkout"
+  to = "/checkout.html"
+  status = 200
+
+[[redirects]]
+  from = "/dashboard"
+  to = "/dashboard.html"
+  status = 200
+
+[[redirects]]
+  from = "/deal"
+  to = "/deal.html"
+  status = 200
+
+[[redirects]]
+  from = "/login"
+  to = "/login.html"
+  status = 200
+
+[[redirects]]
+  from = "/order-success"
+  to = "/order-success.html"
+  status = 200
+
+[[redirects]]
+  from = "/orders"
+  to = "/orders.html"
+  status = 200
+
+[[redirects]]
+  from = "/otp"
+  to = "/otp.html"
+  status = 200
+
+[[redirects]]
+  from = "/prod"
+  to = "/prod.html"
+  status = 200
+
+[[redirects]]
+  from = "/product-detail"
+  to = "/product-detail.html"
+  status = 200
+
+[[redirects]]
+  from = "/product-details"
+  to = "/product-details.html"
+  status = 200
+
+[[redirects]]
+  from = "/productlist"
+  to = "/productlist.html"
+  status = 200
+
+[[redirects]]
+  from = "/products-admin"
+  to = "/products-admin.html"
+  status = 200
+
+[[redirects]]
+  from = "/sso-callback"
+  to = "/sso-callback.html"
+  status = 200
+
+[[redirects]]
+  from = "/tracking"
+  to = "/tracking.html"
+  status = 200

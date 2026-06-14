@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/design-system.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Tracking – Gujjuben's Khakhra</title>
+<link rel="stylesheet" href="css/orders.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="orders-nav">
+    <img src="assets/images/union0.svg" alt="Logo" onclick="location.href='/'" style="cursor:pointer" />
+    <div class="nav-links">
+      <a href="/orders">← My Orders</a>
+      <a href="/cart">🛒 Cart</a>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+    <h1 class="page-title">Order Tracking</h1>
+    <p class="page-sub" id="tracking-sub">Loading order details…</p>
+
+    <!-- Tracking stepper card -->
+    <div class="tracking-card" id="tracking-card" style="display:none">
+
+      <div class="tracking-order-id" id="t-order-id"></div>
+      <div class="tracking-total"    id="t-total"></div>
+      <div class="tracking-method"   id="t-method"></div>
+
+      <!-- Stepper -->
+      <div class="stepper" id="stepper">
+        <div class="step" id="step-2">
+          <div class="step-dot">✅</div>
+          <div class="step-label">Confirmed</div>
+        </div>
+        <div class="step" id="step-3">
+          <div class="step-dot">🚚</div>
+          <div class="step-label">Shipped</div>
+        </div>
+        <div class="step" id="step-4">
+          <div class="step-dot">🎉</div>
+          <div class="step-label">Delivered</div>
+        </div>
+      </div>
+
+      <!-- Items -->
+      <h3 style="font-size:15px;margin-bottom:14px;color:var(--dark)">Order Items</h3>
+      <div class="items-table-wrap">
+      <table class="items-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody id="items-tbody"></tbody>
+      </table>
+      </div>
+
+    </div>
+
+    <div id="tracking-error" style="display:none" class="empty-state">
+      <div class="empty-icon">❌</div>
+      <p>Order not found or you don't have access.</p>
+      <a href="/orders">Back to Orders</a>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+  <!-- Clerk SDK + session guard -->
+  <script
+    async
+    crossorigin="anonymous"
+    data-clerk-publishable-key="pk_test_cHJvYmFibGUtbW9zcXVpdG8tMjMuY2xlcmsuYWNjb3VudHMuZGV2JA"
+    src="https://probable-mosquito-23.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+    type="text/javascript"
+  ></script>
+  <script src="js/config.js"></script>
+  <script src="js/clerk-init.js"></script>
+  <script src="js/session.js"></script>
+  <script>
+    // Route protection — must be logged in to track orders
+    if (!requireLogin()) { /* requireLogin() handles redirect */ }
+    document.addEventListener("DOMContentLoaded", () => watchSession("/login"));
+  </script>
+  <script src="js/order.js"></script>
+  <script src="js/orders.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/toast.js"></script>
+</body>
+</html>

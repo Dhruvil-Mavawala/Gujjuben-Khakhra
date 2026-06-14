@@ -1,0 +1,307 @@
+/* deal.css — Deal With Us page */
+
+body { background: #f8f9fa; }
+
+/* ── Hero ────────────────────────────────────── */
+.deal-hero {
+  background: linear-gradient(135deg, #ef4136 0%, #c8301f 100%);
+  padding: 64px 24px 56px;
+  text-align: center;
+  border-radius: 16px !important;
+}
+.deal-hero-inner { max-width: 640px; margin: 0 auto; }
+
+.deal-hero-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+}
+.deal-hero-title {
+  font-family: 'SauceTomato', serif;
+  font-size: clamp(32px, 5vw, 54px);
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.deal-hero-sub {
+  font-size: clamp(14px, 1.5vw, 17px);
+  color: rgba(255,255,255,0.88);
+  line-height: 1.65;
+}
+
+/* ── Page wrapper ────────────────────────────── */
+.deal-page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* ── Two-column layout ───────────────────────── */
+.deal-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── LEFT ────────────────────────────────────── */
+.deal-mascot {
+  width: 100%;
+  max-width: 380px;
+  display: block;
+  margin: 0 auto 32px;
+}
+
+.deal-benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.benefit-item:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.10); }
+.benefit-icon  { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.benefit-title { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px; }
+.benefit-sub   { font-size: 11px; color: #888; line-height: 1.4; }
+
+/* Contact box */
+.deal-contact-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.deal-contact-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.deal-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+.deal-contact-row:last-child { border-bottom: none; }
+.deal-contact-row > span { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+.dc-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 2px; }
+.dc-val   { font-size: 13px; font-weight: 600; color: #1a1a1a; text-decoration: none; line-height: 1.5; }
+.dc-val:hover { color: #ef4136; }
+
+/* ── RIGHT: form card ────────────────────────── */
+.deal-form-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.09);
+  position: sticky;
+  top: 90px;
+}
+.deal-form-title {
+  font-family: 'SauceTomato', serif;
+  font-size: 28px;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+.deal-form-sub {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* Form elements */
+.dform-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 16px; }
+.dform-row   { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.dform-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #555;
+}
+.dform-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #dee2e6;
+  border-radius: 10px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #f8f9fa;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.dform-input:focus {
+  border-color: #ef4136;
+  box-shadow: 0 0 0 3px rgba(239,65,54,0.10);
+  background: #fff;
+}
+.dform-input.invalid { border-color: #ef4136; }
+.dform-input::placeholder { color: #aaa; }
+.dform-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+.dform-textarea { min-height: 120px; resize: vertical; }
+
+.dform-error   { font-size: 11.5px; color: #ef4136; min-height: 15px; }
+.dform-success { font-size: 13px; font-weight: 600; color: #0b8f3c; }
+.dform-feedback { min-height: 20px; margin-bottom: 6px; }
+
+/* Submit button */
+.dform-submit {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0b8f3c, #00c060);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(11,143,60,0.28);
+  transition: transform 0.15s, box-shadow 0.2s, filter 0.15s;
+}
+.dform-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(11,143,60,0.36);
+  filter: brightness(1.06);
+}
+.dform-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* ── Active nav highlight ─────────────────────── */
+.nav-active {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px !important;
+  opacity: 1 !important;
+}
+
+/* ── Footer ──────────────────────────────────── */
+.deal-footer {
+  background: #1a1a1a;
+  color: rgba(255,255,255,0.55);
+  padding: 20px 24px;
+  font-size: 13px;
+}
+.deal-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 900px) {
+  .deal-main { grid-template-columns: 1fr; gap: 32px; }
+  .deal-form-card { position: static; padding: 28px 20px; }
+  .deal-mascot { max-width: 280px; }
+}
+@media (max-width: 600px) {
+  .deal-hero { padding: 48px 16px 40px; }
+  .dform-row { grid-template-columns: 1fr; }
+  .deal-benefits { grid-template-columns: 1fr; }
+  .deal-footer-inner { flex-direction: column; text-align: center; }
+  .deal-page-wrap { padding: 32px 16px 60px; }
+}
+
+/* ── intl-tel-input integration ─────────────── */
+.iti {
+  width: 100%;
+  display: block;
+}
+
+.iti input#d-phone {
+  width: 100%;
+  padding: 11px 14px 11px 52px; /* leave room for flag */
+  border: 1.5px solid #dee2e6;
+  border-radius: 10px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #f8f9fa;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  min-height: 44px;
+}
+
+.iti input#d-phone:focus {
+  border-color: #ef4136;
+  box-shadow: 0 0 0 3px rgba(239,65,54,0.10);
+  background: #fff;
+}
+
+.iti input#d-phone.invalid {
+  border-color: #ef4136;
+}
+
+.iti__country-list {
+  max-width: min(380px, calc(100vw - 24px));
+  white-space: normal;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 13px;
+}
+
+.iti__country-list .iti__country {
+  padding: 8px 12px;
+}
+
+.iti__selected-dial-code {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.iti__flag-container:hover .iti__selected-flag,
+.iti__selected-flag[aria-expanded="true"] {
+  background: rgba(0,0,0,0.06);
+}
+
+@media (max-width: 600px) {
+  .iti__country-list {
+    max-width: calc(100vw - 20px);
+    font-size: 14px; /* easier to tap on mobile */
+  }
+
+  .iti__country-list .iti__country {
+    padding: 10px 12px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}

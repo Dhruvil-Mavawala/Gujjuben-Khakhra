@@ -1,0 +1,641 @@
+/* ═══════════════════════════════════════════════════════
+   navbar.css — Global Header  (v5 – Premium Spacing)
+   Transparent wrapper · Red pill nav-bar · Fluid sizing
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Design tokens ───────────────────────────── */
+:root {
+  --nav-h:        68px;   /* desktop pill height          */
+  --nav-h-tablet: 60px;   /* 768–991px                    */
+  --nav-h-mobile: 54px;   /* ≤ 480px                      */
+
+  /* Wrapper outer padding (creates floating-pill look) */
+  --nav-pad-desktop: 12px 16px;
+  --nav-pad-tablet:  8px 12px;
+  --nav-pad-mobile:  6px 10px;
+}
+
+/* ══════════════════════════════════════════════
+   FIXED WRAPPER
+   Transparent background so the red pill floats
+   over the page content naturally.
+══════════════════════════════════════════════ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100%;
+  z-index: 1000;
+  background: transparent;
+  padding: var(--nav-pad-desktop);
+  box-sizing: border-box;
+  /* NO transform — breaks fixed children (drawer) */
+  transition: top 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Subtle frosted glass tint only after scrolling */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.10);
+}
+
+.header.hide {
+  top: -110px;
+  pointer-events: none;
+}
+
+/* ── Strip any Figma frame-5471 wrapper ── */
+.header .frame-5471,
+.header > .frame-5471 {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  overflow: visible !important;
+  display: block !important;
+  border-radius: 0 !important;
+  gap: 0 !important;
+}
+
+/* ══════════════════════════════════════════════
+   RED PILL NAV-BAR
+══════════════════════════════════════════════ */
+.nav-bar,
+.header .nav-bar,
+.header > .nav-bar {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  width: 100% !important;
+  height: var(--nav-h) !important;
+  min-height: var(--nav-h) !important;
+
+  /* Generous horizontal padding — logo breathes, links spread */
+  padding: 0 40px !important;
+
+  background: #ef4136 !important;
+  border-radius: 16px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  position: static !important;
+  flex: unset !important;
+  align-self: unset !important;
+}
+
+/* ── Logo ────────────────────────────────────── */
+.header .union {
+  height: 46px !important;
+  width: auto !important;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: block;
+  max-width: none !important;
+  /* subtle margin-right separates logo from links */
+  margin-right: 8px !important;
+}
+
+/* ── Right group (links · auth · cart · hamburger) ── */
+.header .frame-5470 {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 24px !important;       /* balanced group spacing     */
+  position: static !important;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: visible !important;
+}
+
+/* ── Nav links row ───────────────────────────── */
+.header .features-tab {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 30px !important;       /* even link breathing room   */
+  overflow: visible !important;
+  flex-shrink: 1 !important;
+  min-width: 0 !important;
+}
+
+/* Individual nav items */
+.header .home,
+.header .about-us,
+.header .about-us2,
+.header .our-products,
+.header .deal-with-us,
+.header .my-orders {
+  color: #fff !important;
+  font-family: var(--font, 'Poppins', sans-serif) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.15px;
+  display: flex !important;
+  align-items: center !important;
+  height: var(--nav-h) !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  position: static !important;
+  white-space: nowrap !important;
+  transition: opacity 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.header .home:hover,
+.header .about-us:hover,
+.header .about-us2:hover,
+.header .our-products:hover,
+.header .deal-with-us:hover,
+.header .my-orders:hover {
+  opacity: 0.70;
+}
+
+/* Active page indicator */
+.header .nav-active,
+.nav-active {
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+/* ── Mid-range desktop (1024–1200px) — compress slightly ── */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .header .nav-bar     { padding: 0 28px !important; }
+  .header .features-tab { gap: 22px !important; }
+  .header .frame-5470  { gap: 18px !important; }
+
+  .header .home,
+  .header .about-us,
+  .header .about-us2,
+  .header .our-products,
+  .header .deal-with-us,
+  .header .my-orders   { font-size: 14px !important; }
+}
+
+/* ── Large desktop (≥ 1400px) — more air ── */
+@media (min-width: 1400px) {
+  .header .nav-bar     { padding: 0 56px !important; }
+  .header .features-tab { gap: 36px !important; }
+  .header .frame-5470  { gap: 28px !important; }
+}
+
+/* ══════════════════════════════════════════════
+   AUTH ELEMENTS  (injected by navbar.js)
+══════════════════════════════════════════════ */
+.nav-auth {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: var(--nav-h);
+}
+
+/* Login link pill */
+.nav-login-link {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  font-family: var(--font, 'Poppins', sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0 22px;
+  height: 40px;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.14);
+  transition: background 0.2s;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-login-link:hover { background: rgba(255, 255, 255, 0.26); }
+
+/* Logged-in pill */
+.nav-user-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-username {
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font, 'Poppins', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-logout-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50px;
+  font-family: var(--font, 'Poppins', sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-logout-btn:hover { background: rgba(255, 255, 255, 0.28); }
+
+/* ══════════════════════════════════════════════
+   CART BUTTON
+══════════════════════════════════════════════ */
+.header .cart-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  flex-shrink: 0;
+  position: relative !important;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Green cart pill */
+.header .component-2-primary-button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: auto !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  padding: 0 20px !important;
+  background: #009848 !important;
+  border-radius: 50px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.18) !important;
+  position: static !important;
+  transition: opacity 0.15s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.header .component-2-primary-button:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.header .mdi-cart-outline {
+  width: 22px !important;
+  height: 22px !important;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* Badge */
+.header .cart-count {
+  background: #fff !important;
+  color: #009848 !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  border-radius: 50% !important;
+  min-width: 18px !important;
+  height: 18px !important;
+  line-height: 18px;
+  text-align: center;
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
+  position: absolute !important;
+  top: -7px !important;
+  right: -7px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22) !important;
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════════
+   HAMBURGER  (hidden on desktop)
+══════════════════════════════════════════════ */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1.5px solid rgba(255, 255, 255, 0.38);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.nav-hamburger:hover  { background: rgba(255, 255, 255, 0.24); }
+.nav-hamburger:active { background: rgba(255, 255, 255, 0.32); }
+
+.nav-hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+
+/* ✕ open state */
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ══════════════════════════════════════════════
+   TABLET  (≤ 991px)
+══════════════════════════════════════════════ */
+@media (max-width: 991px) {
+
+  .header {
+    padding: var(--nav-pad-tablet) !important;
+  }
+
+  /* Red pill — slightly shorter, less horizontal padding */
+  .header .nav-bar {
+    height: var(--nav-h-tablet) !important;
+    min-height: var(--nav-h-tablet) !important;
+    padding: 0 20px !important;
+    overflow: visible !important;
+  }
+
+  /* Logo */
+  .header .union {
+    height: 38px !important;
+    max-width: 120px !important;
+    margin-right: 0 !important;
+  }
+
+  /* Right group — tighter gap */
+  .header .frame-5470 {
+    gap: 10px !important;
+    overflow: visible !important;
+    position: static !important;
+    align-items: center !important;
+  }
+
+  /* ── Side drawer (hidden by default) ── */
+  .header .features-tab {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+
+    position: fixed !important;
+    top: calc(var(--nav-h-tablet) + 8px) !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: min(300px, 80vw) !important;
+    height: calc(100dvh - calc(var(--nav-h-tablet) + 8px)) !important;
+
+    background: #d93a2b !important;
+    padding: 8px 0 120px !important;
+    z-index: 1001 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    border-radius: 0 !important;
+    -webkit-overflow-scrolling: touch !important;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.25);
+
+    /* closed — hidden from scroll-width calculation */
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity   0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s linear 0.28s;
+    pointer-events: none;
+  }
+
+  /* Drawer open */
+  .header .features-tab.nav-open {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition:
+      transform  0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity    0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s linear 0s !important;
+    pointer-events: auto !important;
+  }
+
+  /* Drawer items */
+  .header .features-tab > div,
+  .header .features-tab > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    height: auto !important;
+    min-height: 56px !important;
+    padding: 16px 28px !important;   /* generous left indent */
+    font-family: var(--font, 'Poppins', sans-serif) !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.15s;
+    letter-spacing: 0.1px;
+  }
+
+  .header .features-tab > div:active,
+  .header .features-tab > a:active {
+    background: rgba(0, 0, 0, 0.12) !important;
+  }
+
+  /* Auth strip — hidden until drawer opens */
+  .header .nav-auth {
+    display: none !important;
+    height: auto !important;
+  }
+
+  .header .frame-5470:has(.features-tab.nav-open) .nav-auth {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    width: min(300px, 80vw) !important;
+    padding: 16px 28px 32px !important;
+    background: #b82e1f !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+    z-index: 1002 !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Show hamburger */
+  .nav-hamburger {
+    display: flex !important;
+    order: 3;
+  }
+
+  .header .cart-button { order: 2; }
+
+  /* Hide username text — keep logout button */
+  .nav-username { display: none; }
+
+  .nav-login-link,
+  .nav-logout-btn {
+    font-size: 14px !important;
+    height: 42px !important;
+    padding: 0 18px !important;
+  }
+
+  /* Smaller cart pill on tablet */
+  .header .component-2-primary-button {
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 14px !important;
+    gap: 7px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   MOBILE  (≤ 480px)
+══════════════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  .header {
+    padding: var(--nav-pad-mobile) !important;
+  }
+
+  .header .nav-bar {
+    height: var(--nav-h-mobile) !important;
+    min-height: var(--nav-h-mobile) !important;
+    padding: 0 16px !important;
+  }
+
+  .header .union {
+    height: 34px !important;
+    max-width: 106px !important;
+  }
+
+  .header .frame-5470 {
+    gap: 8px !important;
+  }
+
+  /* Drawer adjusted for mobile bar height */
+  .header .features-tab {
+    top: calc(var(--nav-h-mobile) + 6px) !important;
+    height: calc(100dvh - calc(var(--nav-h-mobile) + 6px)) !important;
+    width: min(280px, 85vw) !important;
+  }
+
+  .header .frame-5470:has(.features-tab.nav-open) .nav-auth {
+    width: min(280px, 85vw) !important;
+  }
+
+  /* Compact cart pill */
+  .header .component-2-primary-button {
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 0 12px !important;
+    gap: 6px !important;
+  }
+
+  .header .mdi-cart-outline {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Compact hamburger */
+  .nav-hamburger {
+    width: 38px !important;
+    height: 38px !important;
+    padding: 8px !important;
+    gap: 0 !important;
+  }
+
+  .nav-hamburger span {
+    width: 18px !important;
+    height: 2px !important;
+    margin: 0 !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   OVERLAY  (behind the side drawer)
+══════════════════════════════════════════════ */
+.nav-menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+@media (max-width: 991px) {
+  .nav-menu-overlay {
+    display: block;
+    pointer-events: none;
+  }
+  body.nav-menu-open .nav-menu-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   SCROLL LOCK
+══════════════════════════════════════════════ */
+body.nav-menu-open {
+  overflow: hidden !important;
+  width: 100% !important;
+}
+
+/* ══════════════════════════════════════════════
+   ADMIN / SESSION LOGOUT BUTTON
+══════════════════════════════════════════════ */
+.header #session-ui {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header .logout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 18px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50px;
+  font-family: var(--font, 'Poppins', sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.header .logout-btn:hover { background: rgba(255, 255, 255, 0.26); }

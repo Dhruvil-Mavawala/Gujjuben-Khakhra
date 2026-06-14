@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Checkout – Gujjuben's Khakhra" />
+  <title>Checkout – Gujjuben's Khakhra</title>
+  <link rel="stylesheet" href="css/design-system.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css" />
+  <link rel="stylesheet" href="css/checkout.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+<a href="#checkout-main" class="skip-to-content">Skip to checkout form</a>
+
+<!-- ── Navbar ── -->
+<nav class="nav-bar" aria-label="Main navigation" role="navigation">
+  <a href="/" aria-label="Gujjuben's Khakhra Home">
+    <img class="union" src="assets/images/union0.svg" alt="Gujjuben's Khakhra Logo" />
+  </a>
+  <div class="frame-5470">
+    <div class="features-tab" role="list">
+      <div onclick="location.href='/'"            style="cursor:pointer" role="listitem" tabindex="0" class="home">Home</div>
+      <div onclick="location.href='/productlist'" style="cursor:pointer" role="listitem" tabindex="0" class="our-products">Our Products</div>
+      <div onclick="location.href='/about'"       style="cursor:pointer" role="listitem" tabindex="0" class="about-us">About us</div>
+      <div onclick="location.href='/deal'"        style="cursor:pointer" role="listitem" tabindex="0" class="deal-with-us">Deal with us</div>
+      <div onclick="location.href='/cart'"        style="cursor:pointer" role="listitem" tabindex="0">Cart</div>
+    </div>
+    <div class="cart-button" onclick="location.href='/cart'" style="cursor:pointer" aria-label="View cart" role="button" tabindex="0">
+      <div class="component-2-primary-button">
+        <img class="mdi-cart-outline" src="assets/images/mdi-cart-outline0.svg" alt="" aria-hidden="true" />
+        <span id="cart-count" class="cart-count" aria-live="polite">0</span>
+      </div>
+    </div>
+    <button type="button" class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── Security Warning Modal ── -->
+<div class="co-modal-backdrop" id="security-modal" style="display:none" role="dialog" aria-modal="true">
+  <div class="co-modal co-modal--warning">
+    <div class="co-modal__icon">🛡️</div>
+    <h2 class="co-modal__title">Location Mismatch Detected</h2>
+    <p class="co-modal__body" id="security-modal-msg">
+      Your detected location does not match your selected shipping country.
+      Please disable any VPN or proxy, or contact support.
+    </p>
+    <div class="co-modal__detail" id="security-modal-detail"></div>
+    <div class="co-modal__actions">
+      <button class="btn btn-red" id="security-modal-close">Understood</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main Layout ── -->
+<main id="checkout-main" class="co-page">
+
+  <!-- ── LEFT: Form ── -->
+  <div class="co-form-col">
+
+    <!-- Breadcrumb -->
+    <nav class="co-breadcrumb">
+      <a href="/cart">Cart</a>
+      <span>›</span>
+      <span class="co-breadcrumb--active">Checkout</span>
+    </nav>
+
+    <h1 class="co-heading">Shipping Details</h1>
+
+    <!-- Location detection banner -->
+    <div class="co-location-banner" id="location-banner">
+      <span class="co-location-banner__icon">📍</span>
+      <span id="location-banner-text">Detecting your location…</span>
+    </div>
+
+    <form id="checkout-form" novalidate>
+
+      <!-- ── Contact ── -->
+      <section class="co-section">
+        <h2 class="co-section__title">Contact Information</h2>
+        <div class="co-field-row">
+          <div class="co-field">
+            <label for="co-name">Full Name *</label>
+            <input type="text" id="co-name" placeholder="Your full name" autocomplete="name" />
+            <span class="co-field__error" id="err-name"></span>
+          </div>
+          <div class="co-field">
+            <label for="co-phone">Phone Number *</label>
+            <input type="tel" id="co-phone" placeholder="Phone number" autocomplete="tel" />
+            <input type="hidden" id="co-dial-code" />
+            <input type="hidden" id="co-phone-country" />
+            <span class="co-field__error" id="err-phone"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Shipping Address ── -->
+      <section class="co-section">
+        <h2 class="co-section__title">Shipping Address</h2>
+
+        <!-- Country selector (always visible) -->
+        <div class="co-field">
+          <label for="co-country">Shipping Country *</label>
+          <select id="co-country" autocomplete="country">
+            <option value="">Select country…</option>
+          </select>
+          <span class="co-field__error" id="err-country"></span>
+        </div>
+
+        <div class="co-field">
+          <label for="co-addr1">Address Line 1 *</label>
+          <input type="text" id="co-addr1" placeholder="Street address, building" autocomplete="address-line1" />
+          <span class="co-field__error" id="err-addr1"></span>
+        </div>
+
+        <div class="co-field">
+          <label for="co-addr2">Address Line 2</label>
+          <input type="text" id="co-addr2" placeholder="Apartment, suite, floor (optional)" autocomplete="address-line2" />
+        </div>
+
+        <div class="co-field-row">
+          <div class="co-field">
+            <label for="co-city">City *</label>
+            <input type="text" id="co-city" placeholder="City" autocomplete="address-level2" />
+            <span class="co-field__error" id="err-city"></span>
+          </div>
+          <div class="co-field">
+            <label for="co-state">State / Province *</label>
+            <input type="text" id="co-state" placeholder="State or province" autocomplete="address-level1" />
+            <span class="co-field__error" id="err-state"></span>
+          </div>
+        </div>
+
+        <div class="co-field" id="field-postal">
+          <label for="co-postal">ZIP / Postal Code *</label>
+          <div class="co-postal-wrap">
+            <input type="text" id="co-postal" placeholder="ZIP / Postal Code" autocomplete="postal-code" />
+            <span class="co-lookup-spinner" id="co-postal-spinner" aria-hidden="true" style="display:none"></span>
+          </div>
+          <div class="co-lookup-row">
+            <span class="co-lookup-status" id="co-postal-status"></span>
+            <button type="button" class="co-manual-btn" id="co-edit-manual">Edit Manually</button>
+          </div>
+          <span class="co-field__error" id="err-postal"></span>
+        </div>
+
+      </section>
+
+      <!-- ── Delivery Info ── -->
+      <section class="co-section co-delivery-info">
+        <div class="co-delivery-row">
+          <span class="co-delivery-icon">🚚</span>
+          <div>
+            <div class="co-delivery-title">Estimated Delivery</div>
+            <div class="co-delivery-sub" id="delivery-estimate">Select country to see estimate</div>
+            <div class="co-delivery-sub">Free Shipping Worldwide</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Security badges ── -->
+      <div class="co-badges">
+        <span class="co-badge">🔒 Secure Checkout</span>
+        <span class="co-badge">✅ SSL Encrypted</span>
+        <span class="co-badge">🛡️ Buyer Protected</span>
+      </div>
+
+      <!-- ── Form error ── -->
+      <div class="co-form-error" id="co-form-error" style="display:none"></div>
+
+      <!-- ── Submit ── -->
+      <button type="submit" class="co-pay-btn" id="co-pay-btn" disabled>
+        <span id="co-pay-btn-text">Proceed to Payment</span>
+        <span class="co-pay-btn__spinner" id="co-pay-spinner" style="display:none"></span>
+      </button>
+
+    </form>
+  </div>
+
+  <!-- ── RIGHT: Order Summary ── -->
+  <aside class="co-summary-col" aria-label="Order Summary">
+    <div class="co-summary-card" id="co-summary-card">
+      <h2 class="co-summary__title">Order Summary</h2>
+
+      <div class="co-summary__items" id="co-summary-items">
+        <div class="co-summary__loading">Loading cart…</div>
+      </div>
+
+      <div class="co-summary__divider"></div>
+
+      <div class="co-summary__row">
+        <span>Subtotal</span>
+        <span id="co-subtotal">—</span>
+      </div>
+      <div class="co-summary__row" id="co-shipping-row">
+        <span>Shipping</span>
+        <span id="co-shipping">—</span>
+      </div>
+      <div class="co-summary__divider"></div>
+      <div class="co-summary__row co-summary__row--total">
+        <span>Total</span>
+        <span id="co-total">—</span>
+      </div>
+
+      <!-- Coupon placeholder -->
+      <div class="co-coupon">
+        <input type="text" class="co-coupon__input" placeholder="Coupon code (coming soon)" disabled />
+        <button class="co-coupon__btn" disabled>Apply</button>
+      </div>
+
+      <div class="co-summary__currency-note" id="co-currency-note"></div>
+    </div>
+  </aside>
+
+</main>
+
+<!-- ── Payment Method Modal ── -->
+<div class="co-modal-backdrop" id="payment-modal" style="display:none" role="dialog" aria-modal="true">
+  <div class="co-modal">
+    <button class="co-modal__close" id="payment-modal-close" aria-label="Close">✕</button>
+    <div class="co-modal__icon">💳</div>
+    <h2 class="co-modal__title">Choose Payment</h2>
+    <p class="co-modal__body" id="payment-modal-total"></p>
+    <div class="co-payment-options">
+      
+      <button class="co-payment-opt" id="pay-online">
+        <span class="co-payment-opt__icon">💳</span>
+        <div>
+          <div class="co-payment-opt__label">Pay Online</div>
+          <div class="co-payment-opt__sub">Cards, UPI, Net Banking</div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+<script
+  async crossorigin="anonymous"
+  data-clerk-publishable-key="pk_test_cHJvYmFibGUtbW9zcXVpdG8tMjMuY2xlcmsuYWNjb3VudHMuZGV2JA"
+  src="https://probable-mosquito-23.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+></script>
+<script src="js/config.js"></script>
+<script src="js/clerk-init.js"></script>
+<script src="js/session.js"></script>
+<script>if (!requireLogin()) { /* handled */ }</script>
+<script src="js/cart-store.js"></script>
+<script src="js/pricing.js"></script>
+<script src="js/cart-badge.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

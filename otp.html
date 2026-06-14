@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify Code – Gujjuben's Khakhra</title>
+  <link rel="stylesheet" href="css/design-system.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<div class="otp-page">
+  <div class="otp-card">
+
+    <img class="otp-logo" src="assets/images/union0.svg" alt="Logo" />
+
+    <h2 class="otp-title">Check Your Email</h2>
+    <p class="otp-sub">We sent a 6-digit code to</p>
+    <span class="otp-email" id="otp-email-display">your email</span>
+
+    <!-- 6 input boxes -->
+    <div class="otp-inputs" id="otp-inputs">
+      <input class="otp-box" type="text" inputmode="numeric" maxlength="1" data-index="0" aria-label="Code digit 1" />
+      <input class="otp-box" type="text" inputmode="numeric" maxlength="1" data-index="1" aria-label="Code digit 2" />
+      <input class="otp-box" type="text" inputmode="numeric" maxlength="1" data-index="2" aria-label="Code digit 3" />
+      <input class="otp-box" type="text" inputmode="numeric" maxlength="1" data-index="3" aria-label="Code digit 4" />
+      <input class="otp-box" type="text" inputmode="numeric" maxlength="1" data-index="4" aria-label="Code digit 5" />
+      <input class="otp-box" type="text" inputmode="numeric" maxlength="1" data-index="5" aria-label="Code digit 6" />
+    </div>
+
+    <p class="otp-timer" id="otp-timer">
+      Resend code in <span id="countdown">30</span>s
+    </p>
+
+    <p class="otp-msg" id="otp-msg"></p>
+
+    <button class="verify-btn" id="verify-btn" disabled>
+      <div class="spinner" id="spinner"></div>
+      <span class="btn-text">Verify Code</span>
+    </button>
+
+    <button class="resend-btn" id="resend-btn" disabled style="margin-top:10px;">
+      Resend Code
+    </button>
+
+    <a class="back-link" href="/login">← Back</a>
+
+  </div>
+</div>
+
+<!-- Clerk Browser SDK -->
+<script
+  async
+  crossorigin="anonymous"
+  data-clerk-publishable-key="pk_test_cHJvYmFibGUtbW9zcXVpdG8tMjMuY2xlcmsuYWNjb3VudHMuZGV2JA"
+  src="https://probable-mosquito-23.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+  type="text/javascript"
+  onload="window.__clerkScriptLoaded = true;"
+  onerror="console.error('❌ Clerk SDK failed to load.');"
+></script>
+<script src="js/config.js"></script>
+<script src="js/clerk-init.js"></script>
+<script src="js/session.js"></script>
+
+<!-- Firebase compat SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+
+<script src="js/otp.js"></script>
+<script src="js/toast.js"></script>
+</body>
+</html>

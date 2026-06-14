@@ -1,0 +1,1845 @@
+@font-face {
+  font-family: "SauceTomato-Regular";
+  src: url("../fonts/Sauce Tomato.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ====================================
+   MODERN ABOUT FEATURES SECTION
+==================================== */
+
+.about-features {
+  padding: 80px 40px;
+  background: #fafafa;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header span {
+  color: #ef4136;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.section-header h2 {
+  font-size: 48px;
+  margin-top: 10px;
+  color: #222;
+}
+
+.section-header p {
+  max-width: 700px;
+  margin: 15px auto 0;
+  color: #666;
+  font-size: 18px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 35px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.feature-icon {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  color: #ef4136;
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+.about-wrapper {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.about-us,
+.about-us * {
+  box-sizing: border-box;
+}
+
+.about-us {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--bg, linear-gradient(to left, #ffffff, #ffffff));
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.frame-5494 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+}
+
+.frame-5471 {
+  background: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.nav-bar {
+  background: var(--secondary-colour, #ef4136);
+  border-radius: 16px;
+  padding: 15px 30px 15px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+
+.union {
+  flex-shrink: 0;
+  width: 123px;
+  height: 65px;
+  position: relative;
+  overflow: visible;
+}
+
+.frame-5470 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.features-tab {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.home {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+
+.about-us2 {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+
+.our-products {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+
+.deal-with-us {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+
+.cart-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 134px;
+  position: relative;
+}
+
+.component-2-primary-button {
+  background: var(--primary-colour, #009848);
+  border-radius: 37px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 1.4px;
+  padding: 12px 39px 12px 39px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 48px;
+  position: relative;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+.mdi-cart-outline {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+
+.frame-5493 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5286 {
+  padding: 0px 7.4px 0px 7.4px;
+  display: flex;
+  flex-direction: column;
+  gap: 7.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.frame-5283 {
+  width: 100%;
+  aspect-ratio: 16 / 5;
+  /* responsive banner */
+
+  border-radius: 16px;
+  overflow: hidden;
+
+  background-image: url("frame-52830.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+}
+
+.about-gujjuben-s-khakhra {
+  color: #fff;
+  text-align: center;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 64px;
+  line-height: 1.1;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.from-our-kitchen-to-your-heart-the-taste-that-traveled {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 700px;
+  margin: auto;
+}
+
+.about-us3 {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+}
+
+.rectangle-35 {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.frame-5473 {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+}
+
+.frame-5472 {
+  display: flex;
+  flex-direction: column;
+  gap: 11.87px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 653px;
+  position: relative;
+}
+
+.about-our-brand {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 45px;
+  line-height: 160%;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.at-gujjuben-we-believe-that-true-taste-comes-from-the-heart-what-started-as-a-small-home-kitchen-with-a-passion-for-authentic-gujarati-snacks-has-now-grown-into-a-trusted-brand-loved-by-families-everywhere-from-crispy-khakhra-to-wholesome-bhakhri-and-crunchy-coin-khakhra-each-product-carries-the-warmth-purity-and-flavor-of-traditional-homemade-recipes {
+  color: #2b2b2b;
+  font-size: 18px;
+  line-height: 1.8;
+  width: 100%;
+  max-width: 100%;
+}
+
+.every-bite-of-gujjuben-s-snacks-reflects-the-same-love-and-care-that-a-gujarati-mom-puts-into-her-cooking-simple-pure-and-full-of-happiness {
+  color: #2b2b2b;
+  font-size: 18px;
+  line-height: 1.8;
+  width: 100%;
+  max-width: 100%;
+}
+
+.frame-5425 {
+  padding: 45px 120px 75px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 37.5px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5427 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.why-our-product {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 45px;
+  line-height: 75px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.our-unwavering-passion-is-to-deliver-international-quality-food-to-make-it-happen-we-at-gujjuben-s-khakhra-every-khakhra-and-bhakhri-is-made-with-the-same-warmth-care-and-authenticity-that-reminds-you-of-home {
+  color: var(--black, #211414);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  width: 981.75px;
+}
+
+.frame-5490 {
+  display: flex;
+  flex-direction: column;
+  gap: 22.5px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5488 {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.group-85 {
+  flex-shrink: 0;
+  width: 575.06px;
+  height: 252.14px;
+  position: relative;
+  overflow: visible;
+}
+
+.frame-5481 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 575.06px;
+  position: relative;
+}
+
+._01 {
+  color: var(--black, #211414);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 35px;
+  line-height: 160%;
+  font-weight: 400;
+  opacity: 0.2;
+  position: relative;
+  width: 575.06px;
+}
+
+.no-palm-oil {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 28px;
+  line-height: 160%;
+  font-weight: 400;
+  position: relative;
+  width: 575.06px;
+}
+
+.at-gujjuben-khakhra-our-mission-is-simple-to-manufacture-authentic-crispy-khakhras-without-ever-compromising-on-health-which-is-why-our-facility-is-strictly-palm-oil-free {
+  color: var(--black, #211414);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  width: 575.06px;
+}
+
+.frame-5489 {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+._02 {
+  color: var(--black, #211414);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 35px;
+  line-height: 160%;
+  font-weight: 400;
+  opacity: 0.2;
+  position: relative;
+  width: 575.06px;
+}
+
+.no-added-preservatives {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 28px;
+  line-height: 160%;
+  font-weight: 400;
+  position: relative;
+  width: 575.06px;
+}
+
+.our-specialized-roasting-process-locks-in-freshness-naturally-allowing-us-to-produce-gujjuben-khakhra-without-the-need-for-added-preservatives {
+  color: var(--black, #211414);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  width: 575.06px;
+}
+
+.group-852 {
+  flex-shrink: 0;
+  width: 575.06px;
+  height: 252.14px;
+  position: relative;
+  overflow: visible;
+}
+
+.frame-54902 {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.group-853 {
+  flex-shrink: 0;
+  width: 575.06px;
+  height: 252.14px;
+  position: relative;
+  overflow: visible;
+}
+
+._03 {
+  color: var(--black, #211414);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 35px;
+  line-height: 160%;
+  font-weight: 400;
+  opacity: 0.2;
+  position: relative;
+  width: 575.06px;
+}
+
+.no-use-of-refined-flour {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 28px;
+  line-height: 160%;
+  font-weight: 400;
+  position: relative;
+  width: 575.06px;
+}
+
+.we-manufacture-our-khakhras-to-be-a-guilt-free-snack-which-means-eliminating-refined-flour-from-our-supply-chain-entirely {
+  color: var(--black, #211414);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  width: 575.06px;
+}
+
+.frame-5484 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.frame-54903 {
+  padding: 0px 0px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5358 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.frame-5353 {
+  display: flex;
+  flex-direction: column;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5326 {
+  padding: 0px 7.29px 0px 7.29px;
+  display: flex;
+  flex-direction: column;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5278 {
+  border-radius: 10.94px;
+  border-width: 0;
+  border-style: none;
+  padding: 72.92px 109.38px 72.92px 109.38px;
+  display: flex;
+  flex-direction: row;
+  gap: 51.04px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1385.42px;
+  position: relative;
+}
+
+.frame-21 {
+  display: flex;
+  flex-direction: column;
+  gap: 14.58px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+
+.frame-23 {
+  display: flex;
+  flex-direction: column;
+  gap: 3.65px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.contact-us {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.let-s-have-deal {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 59.79166793823242px;
+  line-height: 72.92px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.contact-us-for-dealership-super-stockist-and-wholesale-orders {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-SemiBold", sans-serif;
+  font-size: 17.5px;
+  line-height: 180%;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+
+.frame-96 {
+  display: flex;
+  flex-direction: column;
+  gap: 7.29px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+
+.frame-94 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 21.88px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.full-name {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+
+.frame-5325 {
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-95 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 21.88px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.phone {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+
+.frame-962 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 21.88px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.email {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+
+.frame-97 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 109.38px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.message {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+
+.button-main {
+  flex-shrink: 0;
+  width: 144px;
+  height: 48px;
+  position: relative;
+}
+
+.frame-1 {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7.38px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.component-2-primary-button2 {
+  background: var(--primary-colour, #009848);
+  border-radius: 37px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 1.4px;
+  padding: 12px 39px 12px 39px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.38px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 48px;
+  position: relative;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease;
+}
+
+.component-2-primary-button2:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.button {
+  color: var(--main-colour, #ffffff);
+  text-align: center;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  white-space: nowrap;
+}
+
+.group-80 {
+  flex-shrink: 0;
+  width: 567px;
+  height: 368px;
+  position: absolute;
+  left: 37px;
+  top: 226.65px;
+  overflow: visible;
+}
+
+.frame-5352 {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: absolute;
+  left: 1073px;
+  top: 510.65px;
+}
+
+.instagram {
+  flex-shrink: 0;
+  width: 28.8px;
+  height: 28.8px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+
+.join-us {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 180%;
+  font-weight: 400;
+  position: relative;
+}
+
+.gujjuben-s-khakhra {
+  color: var(--white, #ffffff);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 180%;
+  font-weight: 400;
+  position: relative;
+  -webkit-text-stroke: 3.200000047683716px var(--secondary-colour, #ef4136);
+}
+
+.frame-54932 {
+  background: #ffffff;
+  padding: 84px 105px 84px 105px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.frame-5363 {
+  display: flex;
+  flex-direction: column;
+  gap: 33.6px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5368 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5345 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5339 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.corporate-office-production-unit {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frame-5338 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-395009 {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  width: 206.64px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frame-5340 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.sales-and-marketing-office {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frame-5337 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-3950092 {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  width: 215px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frame-53452 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.contact-us2 {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frame-5365 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5336 {
+  display: flex;
+  flex-direction: column;
+  gap: 10.92px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5333 {
+  display: flex;
+  flex-direction: row;
+  gap: 2.52px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5361 {
+  display: flex;
+  flex-direction: row;
+  gap: 4.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5362 {
+  display: flex;
+  flex-direction: row;
+  gap: 5.04px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.mail {
+  flex-shrink: 0;
+  width: 16.8px;
+  height: 16.8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.group-54 {
+  height: auto;
+  position: absolute;
+  left: 0.49px;
+  top: 2.62px;
+  overflow: visible;
+}
+
+.link-instagram {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frame-53382 {
+  display: flex;
+  flex-direction: column;
+  gap: 10.92px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.group-55 {
+  height: auto;
+  position: absolute;
+  left: 0.68px;
+  top: 0.95px;
+  overflow: visible;
+}
+
+.frame-53622 {
+  display: flex;
+  flex-direction: row;
+  gap: 4.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5344 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.links {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frame-5328 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.link-contact-us {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.link-about-us {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.link-privacy-policy {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.deal-with-us2 {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  width: 73.08px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.line-3 {
+  margin-top: -0.84px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.84px 0 0 0;
+  opacity: 0.2;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 0px;
+  position: relative;
+}
+
+.frame-5491 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 1190px;
+  position: relative;
+}
+
+.frame-5351 {
+  display: flex;
+  flex-direction: row;
+  gap: 67.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.union2 {
+  flex-shrink: 0;
+  width: 206.64px;
+  height: 109.2px;
+  position: relative;
+  overflow: visible;
+}
+
+.frame-5367 {
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.certified-brand-by {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frame-5366 {
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5461 {
+  border-radius: 126px;
+  padding: 10.92px;
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 89.88px;
+  height: 89.88px;
+  position: relative;
+}
+
+.frame-5457 {
+  flex-shrink: 0;
+  width: 67.2px;
+  height: 33.08px;
+  position: relative;
+  overflow: visible;
+}
+
+.frame-53672 {
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-5458 {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.group {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+
+.msme-logo-2 {
+  flex-shrink: 0;
+  width: 95px;
+  height: 83px;
+  position: relative;
+  overflow: hidden;
+}
+
+.group2 {
+  width: 85.23%;
+  height: 97.3%;
+  position: absolute;
+  right: 8.05%;
+  left: 6.72%;
+  bottom: -96.22%;
+  top: 98.93%;
+  transform: translate(0px, -80.76px);
+  overflow: visible;
+}
+
+.line-2 {
+  margin-top: -0.84px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.84px 0 0 0;
+  opacity: 0.2;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 0px;
+  position: relative;
+}
+
+.frame-5354 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.gujjuben-s-khakhra-brand-all-rights-reserved {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 12px;
+  line-height: 13.44px;
+  letter-spacing: -0.12px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frame-5256 {
+  display: flex;
+  flex-direction: row;
+  gap: 4.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.socials {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 11.760000228881836px;
+  line-height: 13.44px;
+  letter-spacing: -0.12px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mdi-instagram {
+  flex-shrink: 0;
+  width: 20.16px;
+  height: 20.16px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+
+.ic-baseline-facebook {
+  flex-shrink: 0;
+  width: 20.16px;
+  height: 20.16px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+
+/* Form input styles */
+.frame-94 input,
+.frame-95 input,
+.frame-962 input,
+.frame-97 textarea,
+.input-name,
+.input-phone,
+.input-email,
+.input-message {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--secondary-colour, #ef4136);
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.58px;
+  font-weight: 400;
+  resize: none;
+}
+
+.frame-94 input::placeholder,
+.frame-95 input::placeholder,
+.frame-962 input::placeholder,
+.frame-97 textarea::placeholder {
+  color: var(--secondary-colour, #ef4136);
+  opacity: 0.7;
+}
+
+button[type="submit"] {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+/* ── Let's have deal — exact match to index/home page ────────────────────── */
+.contact-section {
+  width: 1400px;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1.5px solid rgba(239, 65, 54, 0.3);
+  border-radius: 20px;
+  padding: 48px 56px 0;
+  display: flex;
+  gap: 48px;
+  background: #ffffff;
+}
+
+.contact-left {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.contact-us-label {
+  color: #ef4136;
+  font-family: var(--font-brand, "SauceTomato", serif);
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-heading {
+  color: #ef4136;
+  font-family: var(--font-brand, "SauceTomato", serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.contact-subtext {
+  color: #555;
+  font-family: var(--font, "Poppins", sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+.contact-mascot {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin-top: 16px;
+  align-self: flex-start;
+}
+
+.contact-right {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 48px;
+}
+
+.deal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.deal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.deal-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.deal-input {
+  width: 100%;
+  border: 1.5px solid #ef4136;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: var(--font, "Poppins", "Segoe UI", sans-serif);
+  font-size: 16px;
+  color: #1a1a1a;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  min-height: 48px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.deal-input::placeholder {
+  color: rgba(239, 65, 54, 0.55);
+}
+
+.deal-input:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(239, 65, 54, 0.1);
+  background: #fff;
+}
+
+.deal-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.deal-submit-btn {
+  align-self: flex-start;
+  background: #009848 !important;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 40px;
+  font-family: var(--font, "Poppins", "Segoe UI", sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 152, 72, 0.28);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.deal-submit-btn:hover:not(:disabled) {
+  background: #007a3a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 152, 72, 0.36);
+}
+
+.deal-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 24px 0;
+    gap: 32px;
+  }
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+  .contact-right {
+    padding-bottom: 32px;
+  }
+  .deal-row {
+    flex-direction: column;
+  }
+  .contact-mascot {
+    max-width: 200px;
+  }
+  .deal-submit-btn {
+    width: 100% !important;
+  }
+}
+
+/* ── Join us Instagram row fix ───────────────────────────────────────────── */
+.frame-5352 {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.join-us,
+.gujjuben-s-khakhra {
+  white-space: nowrap;
+}
+
+/* ── Join us — text readability fix ─────────────────────────────────────── */
+.join-us,
+.gujjuben-s-khakhra {
+  font-family: "Inter", "InterTight-Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ef4136;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  white-space: nowrap;
+}
+
+.about-stats {
+  max-width: 1200px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.stat-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.stat-box h2 {
+  color: #ef4136;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  color: #666;
+  font-family: Poppins, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .about-us3 {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 35px;
+    text-align: center;
+  }
+
+  .rectangle-35 {
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    margin: auto;
+  }
+
+  .frame-5473 {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .about-our-brand {
+    font-size: 34px;
+    text-align: center;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}

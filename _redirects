@@ -1,0 +1,22 @@
+/about           /about.html           200
+/admin-orders    /admin-orders.html    200
+/admin           /admin.html           200
+/auth            /auth.html            200
+/cart            /cart.html            200
+/category-admin  /category-admin.html  200
+/checkout        /checkout.html        200
+/dashboard       /dashboard.html       200
+/deal            /deal.html            200
+/login           /login.html           200
+/order-success   /order-success.html   200
+/orders          /orders.html          200
+/otp             /otp.html             200
+/prod            /prod.html            200
+/product-detail  /product-detail.html  200
+/product-details /product-details.html 200
+/productlist     /productlist.html     200
+/products-admin  /products-admin.html  200
+/sso-callback    /sso-callback.html    200
+/inquiry-admin   /inquiry-admin.html   200
+
+/tracking        /tracking.html        200

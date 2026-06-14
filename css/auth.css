@@ -1,0 +1,246 @@
+/* ─────────────────────────────────────────────
+   auth.css  –  Unified auth page styles
+   Used by: auth.html, otp.html
+   ───────────────────────────────────────────── */
+
+@font-face {
+  font-family: "SauceTomato";
+  src: url('../fonts/Sauce Tomato.otf') format('opentype');
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --red:    #e53935;
+  --orange: #ff7043;
+  --green:  #0b8f3c;
+  --cream:  #fff8f0;
+  --dark:   #2d1a00;
+  --muted:  #7a5c2e;
+  --border: #f0d9b5;
+  --shadow: 0 8px 32px rgba(229,57,53,0.10);
+  --radius: 14px;
+  --grad:   linear-gradient(135deg, var(--red), var(--orange));
+  --font:   'Poppins', 'Segoe UI', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font);
+  background: var(--cream);
+  color: var(--dark);
+}
+
+/* ── Page layout ─────────────────────────── */
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  animation: fadeIn 0.45s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── LEFT – Branding ─────────────────────── */
+.auth-brand {
+  position: relative;
+  overflow: hidden;
+  background: #1a0a00;
+}
+.auth-brand img.brand-bg {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block; opacity: 0.72;
+}
+.brand-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(229,57,53,0.72) 0%, rgba(255,112,67,0.55) 60%, rgba(0,0,0,0.55) 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 48px 40px; text-align: center; gap: 20px;
+}
+.brand-logo   { width: 90px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
+.brand-title  { font-family: "SauceTomato", serif; font-size: 32px; color: #fff; line-height: 1.25; text-shadow: 0 2px 8px rgba(0,0,0,0.35); }
+.brand-tagline { font-size: 15px; color: rgba(255,255,255,0.88); line-height: 1.6; max-width: 300px; text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+.brand-badge  { margin-top: 8px; display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); color: #fff; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 18px; border-radius: 50px; backdrop-filter: blur(4px); }
+
+/* ── RIGHT – Form panel ──────────────────── */
+.auth-form-panel {
+  display: flex; align-items: center; justify-content: center;
+  padding: 32px 24px; background: var(--cream); overflow-y: auto;
+}
+.auth-card {
+  width: 100%; max-width: 420px;
+  background: #fff; border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 40px 40px 32px;
+}
+.auth-card-title { font-size: 26px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+.auth-card-sub   { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+
+/* ── Form groups ─────────────────────────── */
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block; font-size: 12px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.6px;
+  color: var(--muted); margin-bottom: 5px;
+}
+.input-wrap { position: relative; display: flex; align-items: center; }
+.input-icon { position: absolute; left: 13px; font-size: 15px; pointer-events: none; opacity: 0.5; }
+.input-wrap input {
+  width: 100%; padding: 12px 16px 12px 40px;
+  border: 1.5px solid var(--border); border-radius: 10px;
+  font-size: 15px; color: var(--dark); background: #fffdf8;
+  outline: none; font-family: var(--font);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-wrap input:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(255,112,67,0.12);
+}
+.input-wrap input.invalid { border-color: var(--red); }
+
+/* ── Error text ──────────────────────────── */
+.field-error {
+  display: block; font-size: 11.5px; color: var(--red);
+  margin-top: 4px; min-height: 15px;
+}
+.form-msg {
+  display: block; font-size: 13px; text-align: center;
+  min-height: 18px; margin-bottom: 6px; color: var(--red);
+}
+.form-msg.success { color: var(--green); }
+
+/* ── Primary button ──────────────────────── */
+.auth-btn {
+  width: 100%; padding: 13px;
+  background: var(--grad); color: #fff;
+  border: none; border-radius: 50px;
+  font-size: 15px; font-weight: 700; font-family: var(--font);
+  letter-spacing: 0.4px; cursor: pointer;
+  transition: transform 0.15s, filter 0.2s;
+  box-shadow: 0 4px 16px rgba(229,57,53,0.28);
+  margin-top: 4px;
+}
+.auth-btn:hover:not(:disabled) { filter: brightness(0.92); transform: translateY(-1px); }
+.auth-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── Divider ─────────────────────────────── */
+.auth-divider {
+  display: flex; align-items: center; gap: 12px;
+  margin: 20px 0; color: var(--muted); font-size: 12px;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: ""; flex: 1; height: 1px; background: var(--border);
+}
+
+/* ── Google button ───────────────────────── */
+.google-btn {
+  width: 100%; padding: 12px 16px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: #fff; color: #3c4043;
+  border: 1.5px solid #dadce0; border-radius: 50px;
+  font-size: 14px; font-weight: 600; font-family: var(--font);
+  cursor: pointer; transition: background 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.google-btn:hover:not(:disabled) {
+  background: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+}
+.google-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── OTP card (used on otp.html) ─────────── */
+.otp-page {
+  min-height: 100vh; display: flex;
+  align-items: center; justify-content: center;
+  background: var(--cream); padding: 24px;
+}
+.otp-card {
+  width: 100%; max-width: 420px;
+  background: #fff; border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 40px 36px 32px;
+  text-align: center;
+  animation: fadeIn 0.4s ease both;
+}
+.otp-logo  { height: 52px; margin: 0 auto 20px; display: block; }
+.otp-title { font-size: 24px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.otp-sub   { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.otp-email { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 24px; display: block; }
+
+/* ── OTP input boxes ─────────────────────── */
+.otp-inputs {
+  display: flex; gap: 10px; justify-content: center; margin: 20px 0;
+}
+.otp-box {
+  width: 46px; height: 54px;
+  text-align: center; font-size: 22px; font-weight: 700;
+  border: 2px solid var(--border); border-radius: 10px;
+  outline: none; font-family: var(--font); color: var(--dark);
+  background: #fffdf8;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.otp-box:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255,112,67,0.12); }
+.otp-box.filled { border-color: var(--green); }
+
+/* ── OTP timer & message ─────────────────── */
+.otp-timer  { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+.otp-msg    { font-size: 13px; min-height: 20px; margin: 8px 0 12px; color: var(--red); }
+.otp-msg.success { color: var(--green); }
+
+/* ── OTP buttons ─────────────────────────── */
+.verify-btn {
+  width: 100%; padding: 13px;
+  background: var(--grad); color: #fff;
+  border: none; border-radius: 50px;
+  font-size: 15px; font-weight: 700; font-family: var(--font);
+  cursor: pointer; margin-bottom: 10px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: filter 0.15s, transform 0.15s;
+  box-shadow: 0 4px 16px rgba(229,57,53,0.28);
+}
+.verify-btn:hover:not(:disabled) { filter: brightness(0.92); transform: translateY(-1px); }
+.verify-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.resend-btn {
+  width: 100%; padding: 11px;
+  background: #f1f3f5; color: var(--dark);
+  border: 1.5px solid var(--border); border-radius: 50px;
+  font-size: 14px; font-weight: 600; font-family: var(--font);
+  cursor: pointer; transition: background 0.15s;
+}
+.resend-btn:hover:not(:disabled) { background: #e9ecef; }
+.resend-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.back-link {
+  display: inline-block; margin-top: 18px;
+  font-size: 13px; color: var(--green);
+  text-decoration: none; font-weight: 600;
+}
+.back-link:hover { text-decoration: underline; }
+
+/* ── Spinner ─────────────────────────────── */
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: none;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 768px) {
+  .auth-page { grid-template-columns: 1fr; grid-template-rows: 180px 1fr; }
+  .auth-brand img.brand-bg { height: 180px; }
+  .brand-overlay { padding: 16px; gap: 8px; }
+  .brand-logo { width: 48px; }
+  .brand-title { font-size: 18px; }
+  .brand-tagline { font-size: 11px; }
+  .auth-card { padding: 28px 20px 24px; }
+  .otp-card { padding: 28px 20px 24px; }
+  .otp-box { width: 40px; height: 48px; font-size: 18px; }
+}

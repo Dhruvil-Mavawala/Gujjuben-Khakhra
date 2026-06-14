@@ -1,0 +1,203 @@
+@font-face {
+  font-family: "SauceTomato";
+  src: url('../fonts/Sauce Tomato.otf') format('opentype');
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --red:    #e53935;
+  --orange: #ff7043;
+  --cream:  #fff8f0;
+  --dark:   #2d1a00;
+  --muted:  #7a5c2e;
+  --border: #f0d9b5;
+  --grad:   linear-gradient(135deg, var(--red), var(--orange));
+}
+
+html, body {
+  min-height: 100vh;
+  font-family: "Segoe UI", "SauceTomato", sans-serif;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+/* ── Card ─────────────────────────────────── */
+.otp-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(229,57,53,0.12);
+  padding: 48px 44px 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Logo ─────────────────────────────────── */
+.otp-logo {
+  width: 64px;
+  margin-bottom: 16px;
+}
+
+/* ── Title ────────────────────────────────── */
+.otp-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.otp-sub {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.otp-phone {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 32px;
+  display: block;
+}
+
+/* ── 4 digit boxes ────────────────────────── */
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.otp-box {
+  width: 58px;
+  height: 64px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--dark);
+  background: #fffdf8;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  caret-color: var(--orange);
+}
+
+.otp-box:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(255,112,67,0.15);
+  transform: scale(1.06);
+}
+
+.otp-box.filled {
+  border-color: var(--red);
+  background: #fff5f5;
+}
+
+/* ── Timer ────────────────────────────────── */
+.otp-timer {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.otp-timer span {
+  font-weight: 700;
+  color: var(--red);
+}
+
+/* ── Resend ───────────────────────────────── */
+.resend-btn {
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange);
+  cursor: pointer;
+  text-decoration: underline;
+  margin-bottom: 24px;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+.resend-btn:disabled {
+  color: #ccc;
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+/* ── Verify button ────────────────────────── */
+.verify-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--grad);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.verify-btn:hover:not(:disabled) {
+  filter: brightness(0.91);
+  transform: translateY(-1px) scale(1.01);
+}
+.verify-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* spinner */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: none;
+}
+.verify-btn.loading .spinner { display: block; }
+.verify-btn.loading .btn-text { opacity: 0.7; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Messages ─────────────────────────────── */
+.otp-msg {
+  font-size: 13px;
+  min-height: 18px;
+  margin-top: 14px;
+  color: var(--red);
+}
+.otp-msg.success { color: #2e7d32; }
+
+/* ── Back link ────────────────────────────── */
+.back-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 12.5px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--red); text-decoration: underline; }
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 480px) {
+  .otp-card { padding: 36px 20px 28px; }
+  .otp-box  { width: 50px; height: 56px; font-size: 22px; }
+}

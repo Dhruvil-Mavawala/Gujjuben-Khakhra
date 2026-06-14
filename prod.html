@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/design-system.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - Gujjuben's Khakhra</title>
+    <link rel="stylesheet" href="prod.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+
+      <!-- Navbar -->
+      <div class="frame-5471">
+        <div class="nav-bar">
+          <img class="union" src="assets/images/union0.svg" alt="Logo" />
+          <div class="frame-5470">
+            <div class="features-tab">
+              <div onclick="location.href='/'">Home</div>
+              <div onclick="location.href='/about'">About us</div>
+              <div onclick="location.href='/productlist'">Our Products</div>
+              <div>Deal with us</div>
+            </div>
+          <div class="cart-button" onclick="location.href='/cart'" style="cursor:pointer">
+            <div class="nav-cart-btn">
+              <img src="assets/images/mdi-cart-outline0.svg" alt="Cart" />
+              <span id="cart-count" class="cart-count">0</span>
+            </div>
+          </div>
+          <button type="button" class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero -->
+      <div class="hero-section">
+        <div id="hero-title" class="hero-title">Khakhra</div>
+        <div id="hero-desc" class="hero-desc">
+          Prepared under hygienic conditions and packed to retain freshness,
+          khakhra combines authentic taste, nutrition, and convenience.
+        </div>
+      </div>
+
+      <!-- Banner image -->
+      <img class="banner-img" src="assets/images/frame-52830.png" alt="Category banner" />
+
+      <!-- Product grid -->
+      <div class="products-section">
+        <div id="products-container">
+          <!-- Cards injected by prod.js -->
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/pricing.js"></script>
+    <script src="js/cart-store.js"></script>
+    <script src="js/prod.js"></script>
+    <script src="js/cart-badge.js"></script>
+    <script src="js/navbar.js"></script>
+  <script src="js/toast.js"></script>
+</body>
+</html>

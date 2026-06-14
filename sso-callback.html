@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signing in… – Gujjuben's Khakhra</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: #fff8f0;
+      color: #2d1a00;
+    }
+    .msg { text-align: center; }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 3px solid #f0d9b5;
+      border-top-color: #e53935;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    p { font-size: 15px; color: #7a5c2e; }
+  </style>
+</head>
+<body>
+  <div class="msg">
+    <div class="spinner"></div>
+    <p id="status-msg">Completing sign-in…</p>
+  </div>
+
+  <!-- Clerk Browser SDK -->
+  <script
+    async
+    crossorigin="anonymous"
+    data-clerk-publishable-key="pk_test_cHJvYmFibGUtbW9zcXVpdG8tMjMuY2xlcmsuYWNjb3VudHMuZGV2JA"
+    src="https://probable-mosquito-23.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+    type="text/javascript"
+  ></script>
+  <script src="js/config.js"></script>
+  <script src="js/clerk-init.js"></script>
+
+  <!-- Firebase compat SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+
+  <script>
+    // ── Firebase init ──────────────────────────
+    const _fbConfig = {
+      apiKey           : "AIzaSyD-rgB6-m-YE3EFHR_FACe7afVmqduyOps",
+      authDomain       : "khakhra-5cb3d.firebaseapp.com",
+      databaseURL      : "https://khakhra-5cb3d-default-rtdb.firebaseio.com",
+      projectId        : "khakhra-5cb3d",
+      storageBucket    : "khakhra-5cb3d.appspot.com",
+      messagingSenderId: "713999821089",
+      appId            : "1:713999821089:web:f0c25da51cff322d61b660",
+    };
+    if (!firebase.apps.length) firebase.initializeApp(_fbConfig);
+    const _db = firebase.database();
+
+    // ── Upsert user in Firebase Realtime Database ──
+    // Creates new user record or updates lastLogin for existing user.
+    async function upsertFirebaseUser(clerkUser) {
+      const uid      = clerkUser.id;
+      const email    = clerkUser.primaryEmailAddress?.emailAddress || "";
+      const name     = clerkUser.fullName
+                    || clerkUser.firstName
+                    || clerkUser.username
+                    || email.split("@")[0]
+                    || "Customer";
+      const photoURL = clerkUser.imageUrl || clerkUser.profileImageUrl || "";
+      const now      = new Date().toISOString();
+
+      const snap = await _db.ref(`users/${uid}`).once("value");
+
+      if (snap.exists()) {
+        // Existing user — only update lastLogin
+        await _db.ref(`users/${uid}/lastLogin`).set(now);
+        console.log("[SSO] ✅ Existing user lastLogin updated.");
+        return snap.val();
+      }
+
+      // New user — create full record
+      const userRecord = {
+        uid,
+        clerkId  : uid,
+        email,
+        name,
+        photoURL,
+        provider : "google",
+        role     : "customer",
+        createdAt: now,
+        lastLogin: now,
+      };
+      await _db.ref(`users/${uid}`).set(userRecord);
+      console.log("[SSO] ✅ New Firebase user created.");
+      return userRecord;
+    }
+
+    // ── Store localStorage session ──────────────
+    function storeSession(clerkUser) {
+      const uid   = clerkUser.id;
+      const email = clerkUser.primaryEmailAddress?.emailAddress || "";
+      const name  = clerkUser.fullName || clerkUser.firstName || clerkUser.username || email.split("@")[0] || "Customer";
+      localStorage.setItem("user", JSON.stringify({
+        id      : uid,
+        email,
+        username: name,
+        role    : "customer",
+        provider: "google",
+      }));
+    }
+
+    // ── Main SSO callback handler ───────────────
+    (async function handleCallback() {
+      const statusEl = document.getElementById("status-msg");
+
+      try {
+        const clerk = await window.clerkReady;
+
+        // If user already authenticated (no redirect params needed)
+        if (clerk.user) {
+          console.log("[SSO] Already authenticated:", clerk.user.id);
+          statusEl.textContent = "Syncing your account…";
+          await upsertFirebaseUser(clerk.user);
+          storeSession(clerk.user);
+          window.dispatchEvent(new Event("auth-changed"));
+          setTimeout(() => { window.location.replace("/"); }, 500);
+          return;
+        }
+
+        // Handle the OAuth redirect callback
+        statusEl.textContent = "Completing sign-in…";
+        await clerk.handleRedirectCallback();
+
+        // After handleRedirectCallback, clerk.user should be populated
+        const user = clerk.user;
+        if (!user) {
+          // Try waiting a moment for session to propagate
+          await new Promise(r => setTimeout(r, 1000));
+          if (!clerk.user) {
+            console.error("[SSO] No user after handleRedirectCallback");
+            window.location.href = "/login";
+            return;
+          }
+        }
+
+        const resolvedUser = clerk.user;
+        console.log("[SSO] ✅ Clerk user:", resolvedUser.id, resolvedUser.primaryEmailAddress?.emailAddress);
+
+        statusEl.textContent = "Syncing your account…";
+        await upsertFirebaseUser(resolvedUser);
+        storeSession(resolvedUser);
+
+        // Notify any open pages
+        window.dispatchEvent(new Event("auth-changed"));
+
+        // Redirect to home (or original destination)
+        const params   = new URLSearchParams(window.location.search);
+        const redirect = params.get("redirect");
+        const target   = redirect && /^\/[a-zA-Z0-9_\-]*$/.test(redirect) ? redirect : "/";
+
+        statusEl.textContent = "Redirecting…";
+        setTimeout(() => { window.location.replace(target); }, 600);
+
+      } catch (err) {
+        console.error("[SSO] Callback error:", err);
+        // If Clerk already handled the callback (session exists), recover gracefully
+        try {
+          const clerk = await window.clerkReady;
+          if (clerk.user) {
+            await upsertFirebaseUser(clerk.user);
+            storeSession(clerk.user);
+            window.location.replace("/");
+            return;
+          }
+        } catch { /* ignore */ }
+        statusEl.textContent = "Sign-in failed. Redirecting…";
+        setTimeout(() => { window.location.href = "/login"; }, 1500);
+      }
+    })();
+  </script>
+</body>
+</html>

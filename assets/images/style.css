@@ -1,0 +1,1154 @@
+.coin-khakhra,
+.coin-khakhra * {
+  box-sizing: border-box;
+}
+.coin-khakhra {
+  background: var(--bg, linear-gradient(to left, #ffffff, #ffffff));
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+.frame-5494 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5471 {
+  background: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1440px;
+  position: relative;
+  overflow: hidden;
+}
+.nav-bar {
+  background: var(--secondary-colour, #ef4136);
+  border-radius: 16px;
+  padding: 15px 30px 15px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.union {
+  flex-shrink: 0;
+  width: 123px;
+  height: 65px;
+  position: relative;
+  overflow: visible;
+}
+.frame-5470 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.features-tab {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.home {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+.about-us {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+.our-products {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+.deal-with-us {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+.cart-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 134px;
+  position: relative;
+}
+.component-2-primary-button {
+  background: var(--primary-colour, #009848);
+  border-radius: 37px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 1.4px;
+  padding: 12px 39px 12px 39px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 48px;
+  position: relative;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.25);
+}
+.mdi-cart-outline {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+.frame-5286 {
+  padding: 50px 7.4px 72px 7.4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1420px;
+  position: relative;
+}
+.coin-khakhra2 {
+  color: var(--secondary-colour, #ef4136);
+  text-align: center;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 90px;
+  line-height: 102px;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  position: relative;
+  width: 850.5px;
+}
+.prepared-under-hygienic-conditions-and-packed-to-retain-freshness-khakhra-combines-authentic-taste-nutrition-and-convenience {
+  color: var(--secondary-colour, #ef4136);
+  text-align: center;
+  font-family: "InterTight-Regular", sans-serif;
+  font-size: 18.287500381469727px;
+  line-height: 106.45%;
+  font-weight: 400;
+  position: relative;
+  width: 554px;
+}
+.frame-5283 {
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1405px;
+  height: 489px;
+  position: relative;
+  object-fit: cover;
+}
+.frame-5477 {
+  border-radius: 16px;
+  padding: 55.4px 50.36px 55.4px 50.36px;
+  display: flex;
+  flex-direction: column;
+  gap: 55.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5476 {
+  display: flex;
+  flex-direction: row;
+  gap: 45.32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 10.07px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 402.88px;
+  position: relative;
+}
+.frame-2 {
+  background: #ffffff;
+  border-radius: 20.14px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 402.88px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-3 {
+  padding: 12.59px;
+  display: flex;
+  flex-direction: row;
+  gap: 12.59px;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: -33.99px;
+  top: -18.88px;
+}
+.gemini-generated-image-egdf-0-vegdf-0-vegdf-1 {
+  flex-shrink: 0;
+  width: 445.68px;
+  height: 445.68px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.frame-4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 132.19px;
+  position: relative;
+}
+.khakhra {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 25.179855346679688px;
+  line-height: 35.25px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-54772 {
+  display: flex;
+  flex-direction: row;
+  gap: 45.32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5478 {
+  display: flex;
+  flex-direction: row;
+  gap: 45.32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5479 {
+  display: flex;
+  flex-direction: row;
+  gap: 45.32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5484 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1440px;
+  position: relative;
+}
+.frame-5490 {
+  padding: 0px 0px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5358 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1400px;
+  position: relative;
+}
+.frame-5353 {
+  display: flex;
+  flex-direction: column;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5326 {
+  padding: 0px 7.29px 0px 7.29px;
+  display: flex;
+  flex-direction: column;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5278 {
+  border-radius: 10.94px;
+  border-width: 1.09px;
+  border-style: solid;
+  border-image: linear-gradient(
+    99.07deg,
+    rgba(239, 65, 54, 1) 99.98999834060669%,
+    rgba(239, 65, 54, 0) 100%
+  );
+  border-image-slice: 1;
+  padding: 72.92px 109.38px 72.92px 109.38px;
+  display: flex;
+  flex-direction: row;
+  gap: 51.04px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1385.42px;
+  position: relative;
+}
+.frame-21 {
+  display: flex;
+  flex-direction: column;
+  gap: 14.58px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.frame-23 {
+  display: flex;
+  flex-direction: column;
+  gap: 3.65px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.contact-us {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+.order-now {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 59.79166793823242px;
+  line-height: 72.92px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+.fill-out-your-details-of-your-order-in-the-section-to-place-your-order {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-SemiBold", sans-serif;
+  font-size: 17.5px;
+  line-height: 180%;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+.frame-96 {
+  display: flex;
+  flex-direction: column;
+  gap: 7.29px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.frame-94 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 21.88px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.full-name {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-5325 {
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-95 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 21.88px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.phone {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-962 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 21.88px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.email {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-97 {
+  border-radius: 7.29px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.73px;
+  padding: 14.58px 14.58px 109.38px 14.58px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.29px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.place-your-order-here {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14.583333969116211px;
+  font-weight: 400;
+  position: relative;
+}
+.button-main {
+  flex-shrink: 0;
+  width: 106.31px;
+  height: 35.44px;
+  position: relative;
+}
+.frame-1 {
+  padding: 7.38px;
+  display: flex;
+  flex-direction: column;
+  gap: 7.38px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: -7.38px;
+  top: -7.38px;
+}
+.component-2-primary-button2 {
+  background: var(--primary-colour, #009848);
+  border-radius: 27.32px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 1.03px;
+  padding: 8.86px 28.79px 8.86px 28.79px;
+  display: flex;
+  flex-direction: row;
+  gap: 7.38px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 35.44px;
+  position: relative;
+  box-shadow: 0px 2.21px 0px 0px rgba(0, 0, 0, 0.25);
+}
+.button {
+  color: var(--main-colour, #ffffff);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 11.812500953674316px;
+  font-weight: 400;
+  position: relative;
+}
+.group-80 {
+  flex-shrink: 0;
+  width: 567px;
+  height: 368px;
+  position: absolute;
+  left: 37px;
+  top: 226.65px;
+  overflow: visible;
+}
+.frame-5352 {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: absolute;
+  left: 1073px;
+  top: 510.65px;
+}
+.instagram {
+  flex-shrink: 0;
+  width: 28.8px;
+  height: 28.8px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+.join-us {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 180%;
+  font-weight: 400;
+  position: relative;
+}
+.gujjuben-s-khakhra {
+  color: var(--white, #ffffff);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 180%;
+  font-weight: 400;
+  position: relative;
+  -webkit-text-stroke: 3.200000047683716px var(--secondary-colour, #ef4136);
+}
+.frame-5493 {
+  background: #ffffff;
+  padding: 84px 105px 84px 105px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1400px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-5363 {
+  display: flex;
+  flex-direction: column;
+  gap: 33.6px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5368 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5345 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5339 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.corporate-office-production-unit {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5338 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-395009 {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  width: 206.64px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5340 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.sales-and-marketing-office {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5337 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-3950092 {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  width: 215px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-53452 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.contact-us2 {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5365 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5336 {
+  display: flex;
+  flex-direction: column;
+  gap: 10.92px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5333 {
+  display: flex;
+  flex-direction: row;
+  gap: 2.52px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5361 {
+  display: flex;
+  flex-direction: row;
+  gap: 4.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5362 {
+  display: flex;
+  flex-direction: row;
+  gap: 5.04px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.mail {
+  flex-shrink: 0;
+  width: 16.8px;
+  height: 16.8px;
+  position: relative;
+  overflow: hidden;
+}
+.group-54 {
+  height: auto;
+  position: absolute;
+  left: 0.49px;
+  top: 2.62px;
+  overflow: visible;
+}
+.link-instagram {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-53382 {
+  display: flex;
+  flex-direction: column;
+  gap: 10.92px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.group-55 {
+  height: auto;
+  position: absolute;
+  left: 0.68px;
+  top: 0.95px;
+  overflow: visible;
+}
+.frame-53622 {
+  display: flex;
+  flex-direction: row;
+  gap: 4.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5344 {
+  display: flex;
+  flex-direction: column;
+  gap: 16.8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.links {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5328 {
+  display: flex;
+  flex-direction: column;
+  gap: 8.4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.link-contact-us {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link-about-us {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link-privacy-policy {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.deal-with-us2 {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "InterTight-Medium", sans-serif;
+  font-size: 13.440000534057617px;
+  line-height: 16.78px;
+  letter-spacing: -0.45px;
+  font-weight: 500;
+  position: relative;
+  width: 73.08px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.line-3 {
+  margin-top: -0.84px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.84px 0 0 0;
+  opacity: 0.2;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 0px;
+  position: relative;
+}
+.frame-5491 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 1190px;
+  position: relative;
+}
+.frame-5351 {
+  display: flex;
+  flex-direction: row;
+  gap: 67.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.union2 {
+  flex-shrink: 0;
+  width: 206.64px;
+  height: 109.2px;
+  position: relative;
+  overflow: visible;
+}
+.frame-5367 {
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.certified-brand-by {
+  color: var(--secondary-colour, #ef4136);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 19.24px;
+  letter-spacing: -0.45px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5366 {
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5461 {
+  border-radius: 126px;
+  padding: 10.92px;
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 89.88px;
+  height: 89.88px;
+  position: relative;
+}
+.frame-5457 {
+  flex-shrink: 0;
+  width: 67.2px;
+  height: 33.08px;
+  position: relative;
+  overflow: visible;
+}
+.frame-53672 {
+  display: flex;
+  flex-direction: row;
+  gap: 8.4px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-5458 {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+.group {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+.msme-logo-2 {
+  flex-shrink: 0;
+  width: 95px;
+  height: 83px;
+  position: relative;
+  overflow: hidden;
+}
+.group2 {
+  width: 85.23%;
+  height: 97.3%;
+  position: absolute;
+  right: 8.05%;
+  left: 6.72%;
+  bottom: -96.22%;
+  top: 98.93%;
+  transform: translate(0px, -80.76px);
+  overflow: visible;
+}
+.line-2 {
+  margin-top: -0.84px;
+  border-style: solid;
+  border-color: var(--secondary-colour, #ef4136);
+  border-width: 0.84px 0 0 0;
+  opacity: 0.2;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 0px;
+  position: relative;
+}
+.frame-5354 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.gujjuben-s-khakhra-brand-all-rights-reserved {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 12px;
+  line-height: 13.44px;
+  letter-spacing: -0.12px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-5256 {
+  display: flex;
+  flex-direction: row;
+  gap: 4.2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.socials {
+  color: var(--red, #f0302d);
+  text-align: left;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 11.760000228881836px;
+  line-height: 13.44px;
+  letter-spacing: -0.12px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.mdi-instagram {
+  flex-shrink: 0;
+  width: 20.16px;
+  height: 20.16px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+.ic-baseline-facebook {
+  flex-shrink: 0;
+  width: 20.16px;
+  height: 20.16px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}

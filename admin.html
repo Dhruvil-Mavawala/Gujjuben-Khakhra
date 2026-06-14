@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="css/admin.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <div class="login-card">
+        <img class="login-logo" src="assets/images/union0.svg" alt="Logo" />
+
+        <h1 class="login-title">Welcome back!</h1>
+
+        <div class="login-form">
+          <!-- Email -->
+          <div class="field-group">
+            <label class="field-label" for="email">Email address</label>
+            <input
+              class="field-input"
+              id="email"
+              type="email"
+              placeholder="example@mail.com"
+              autocomplete="email"
+            />
+            <span class="field-error" id="email-error"></span>
+          </div>
+
+          <!-- Password -->
+          <div class="field-group">
+            <label class="field-label" for="password">Password</label>
+            <div class="password-wrap">
+              <input
+                class="field-input"
+                id="password"
+                type="password"
+                placeholder="Password"
+                autocomplete="current-password"
+              />
+              <button class="eye-toggle" id="eye-toggle" type="button" aria-label="Toggle password visibility">
+                <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" fill="#8e8e93">
+                  <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 0 0-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 0 0 0-17.47C428.89 172.28 347.8 112 255.66 112z" fill="none" stroke="#8e8e93" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+                  <circle cx="256" cy="256" r="80" fill="none" stroke="#8e8e93" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+                </svg>
+              </button>
+            </div>
+            <p class="caution-text">Use at least 8 characters with 1 number, and one special character.</p>
+            <span class="field-error" id="password-error"></span>
+          </div>
+
+          <!-- Login button -->
+          <button class="login-btn" id="login-btn" type="button">LOG IN</button>
+
+          <!-- Forgot password -->
+          <a class="forgot-link" href="#">Forgot password?</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage-compat.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

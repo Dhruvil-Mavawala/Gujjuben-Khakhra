@@ -1,0 +1,43 @@
+# Gujjuben's Khakhra — Apache URL rewrites (InfinityFree / XAMPP / cPanel)
+# Replaces Netlify _redirects so /about, /cart, /productlist, etc. work.
+#
+# Upload this file to your hosting ROOT (same folder as index.html).
+# On InfinityFree: File Manager → htdocs → upload .htaccess
+#
+# If the site lives in a subfolder (e.g. /Gujjuben-Khakhra/), uncomment:
+# RewriteBase /Gujjuben-Khakhra/
+
+Options -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Pass through real files and folders (css, js, images, *.html direct access)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Clean URLs → HTML pages (QSA keeps ?category=… & ?id=… query strings)
+  RewriteRule ^about/?$ about.html [L,QSA]
+  RewriteRule ^admin-orders/?$ admin-orders.html [L,QSA]
+  RewriteRule ^admin/?$ admin.html [L,QSA]
+  RewriteRule ^auth/?$ auth.html [L,QSA]
+  RewriteRule ^cart/?$ cart.html [L,QSA]
+  RewriteRule ^category-admin/?$ category-admin.html [L,QSA]
+  RewriteRule ^checkout/?$ checkout.html [L,QSA]
+  RewriteRule ^dashboard/?$ dashboard.html [L,QSA]
+  RewriteRule ^deal/?$ deal.html [L,QSA]
+  RewriteRule ^login/?$ login.html [L,QSA]
+  RewriteRule ^order-success/?$ order-success.html [L,QSA]
+  RewriteRule ^orders/?$ orders.html [L,QSA]
+  RewriteRule ^otp/?$ otp.html [L,QSA]
+  RewriteRule ^prod/?$ prod.html [L,QSA]
+  RewriteRule ^product-detail/?$ product-detail.html [L,QSA]
+  RewriteRule ^product-details/?$ product-details.html [L,QSA]
+  RewriteRule ^productlist/?$ productlist.html [L,QSA]
+  RewriteRule ^products-admin/?$ products-admin.html [L,QSA]
+  RewriteRule ^sso-callback/?$ sso-callback.html [L,QSA]
+  RewriteRule ^tracking/?$ tracking.html [L,QSA]
+  RewriteRule ^inquiry-admin/?$ inquiry-admin.html [L,QSA]
+</IfModule>

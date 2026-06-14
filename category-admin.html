@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Category Management</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/category-admin.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+  <div class="dashboard">
+
+    <!-- Side Panel -->
+    <aside class="side-panel">
+      <div class="side-nav">
+        <img class="side-logo" src="assets/images/union0.svg" alt="Logo" />
+        <nav class="nav-links" id="sidebar-nav">
+          <a class="nav-item" href="/dashboard" data-page="/dashboard">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+            </svg>
+            Dashboard
+          </a>
+          <a class="nav-item" href="/products-admin" data-page="/products-admin">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+            </svg>
+            Products
+          </a>
+          <a class="nav-item" href="/category-admin" data-page="/category-admin">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" />
+            </svg>
+            Category
+          </a>
+          <a class="nav-item" href="/admin-orders" data-page="/admin-orders">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            </svg>
+            Orders
+          </a>
+          <a class="nav-item" href="/inquiry-admin" data-page="/inquiry-admin">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            Inquiries
+          </a>
+        </nav>
+      </div>
+      <button class="logout-btn" id="logout-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+          <polyline points="16 17 21 12 16 7" />
+          <line x1="21" y1="12" x2="9" y2="12" />
+        </svg>
+        Logout
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="top-bar-left">
+          <div class="admin-badge">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#009848" stroke-width="1.5">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+            </svg>
+            <span>Admin</span>
+          </div>
+
+        </div>
+        <p class="welcome-text">Welcome, Gujjuben's Khakhra</p>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="cat-toolbar">
+        <div class="cat-title-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2b2b2b" stroke-width="2">
+            <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" />
+          </svg>
+          <span class="cat-title">All Categories</span>
+        </div>
+        <button class="add-btn" id="add-btn">
+          <span class="add-btn-icon">+</span> Add Category
+        </button>
+      </div>
+
+      <!-- Table -->
+      <div class="cat-table-wrap">
+        <div class="cat-col-headers">
+          <span>#</span>
+          <span>Category Name</span>
+          <span>Category Image</span>
+          <span>Actions</span>
+        </div>
+        <div id="category-rows">
+          <div class="table-loading">Loading categories...</div>
+        </div>
+      </div>
+
+      <!-- Summary Card -->
+      <div class="cat-summary">
+        <div class="summary-card">
+          <div class="summary-icon cat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2b2b2b" stroke-width="1.5">
+              <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" />
+            </svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Total Category</span>
+            <span class="stat-value" id="total-category">—</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Add / Edit Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modal-title">Add Category</h2>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <form id="category-form" class="modal-form">
+        <input type="hidden" id="edit-id" />
+        <div class="form-group">
+          <label for="f-name">Category Name</label>
+          <input type="text" id="f-name" placeholder="Enter category name" required />
+        </div>
+        <div class="form-group">
+          <label for="f-desc">Description</label>
+          <textarea id="f-desc" rows="3" placeholder="Category description..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="f-image">Category Image</label>
+          <div class="image-upload-wrap">
+            <label class="image-upload-label" for="f-image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="17 8 12 3 7 8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+              </svg>
+              <span id="image-label-text">Choose image file</span>
+            </label>
+            <input type="file" id="f-image" accept="image/*" />
+          </div>
+          <img id="image-preview" class="image-preview" src="" alt="Preview" />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-cancel" id="btn-cancel">Cancel</button>
+          <button type="submit" class="btn-save" id="btn-save">Save Category</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/category-admin.js"></script>
+  <script>
+    // Highlight active sidebar item based on current page
+    var currentPage = location.pathname.split("/").pop() || "/dashboard";
+    document.querySelectorAll("#sidebar-nav .nav-item[data-page]").forEach(function (link) {
+      if (link.dataset.page === currentPage) link.classList.add("active");
+    });
+  </script>
+  <script>document.getElementById('logout-btn').addEventListener('click', adminLogout);</script>
+</body>
+
+</html>
