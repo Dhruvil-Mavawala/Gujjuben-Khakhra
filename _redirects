@@ -1,4 +1,4 @@
-/api/*  https://gujjukhaka-backend.onrender.com/:splat  200
+/api/*  https://gujjuben-khakhra.onrender.com/:splat  200
 
 /about           /about.html           200
 /admin-orders    /admin-orders.html    200
