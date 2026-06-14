@@ -28,29 +28,29 @@ const allowedOrigins = [
   "http://127.0.0.1:3000",
 ];
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin) {
-        return callback(null, true);
-      }
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow requests with no origin (e.g. curl, Postman, server-to-server)
+    if (!origin) {
+      return callback(null, true);
+    }
 
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
 
-      console.log("Blocked Origin:", origin);
+    console.log("Blocked Origin:", origin);
+    return callback(new Error("Not allowed by CORS"));
+  },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 200, // Some browsers (IE11) choke on 204
+};
 
-      return callback(new Error("Not allowed by CORS"));
-    },
-
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  }),
-);
-
-app.options("*", cors());
+// Handle preflight OPTIONS requests before any other middleware
+app.options("*", cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // ── Credentials (from environment only) ──────
