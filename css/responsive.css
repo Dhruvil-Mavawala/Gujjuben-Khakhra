@@ -783,8 +783,10 @@ select {
     height: auto !important;
   }
   .deal-row {
+    display: flex !important;
     flex-direction: column !important;
     gap: 10px !important;
+    width: 100% !important;
   }
   .deal-input,
   .input-name,
@@ -2171,3 +2173,12 @@ img {
 .hero-slider {
   overflow: hidden !important;
 }
+/* =========================================
+   CONTACT FORM — neutralised, handled in productlist.css
+   All .contact-right scoped rules live in productlist.css.
+   These stubs prevent any legacy overrides from re-appearing.
+========================================= */
+
+/* No deal-row / iti overrides here — productlist.css owns them */
+
+

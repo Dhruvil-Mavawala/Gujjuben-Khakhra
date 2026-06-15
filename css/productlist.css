@@ -1596,83 +1596,135 @@ button[type="submit"] {
   min-width: 0;
   padding-bottom: 48px;
 }
-.deal-form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+/* ═══════════════════════════════════════════════════════════════
+   CONTACT FORM — single spacing system, 18px gap everywhere
+   All conflicting rules neutralised here. Do NOT add deal-form
+   rules anywhere else in this file.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1. Form container: every child separated by 18px, no exceptions */
+.contact-right .deal-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
-.deal-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+
+/* 2. .deal-field: transparent wrapper — contributes no extra space */
+.contact-right .deal-field {
+  display: contents !important; /* makes children direct flex items of .deal-form */
 }
-.deal-row {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
+
+/* 3. .deal-row: Phone + Email stacked vertically, same 18px gap */
+.contact-right .deal-row {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 0 !important;
 }
-.deal-input {
-  width: 100%;
-  border: 1.5px solid #ef4136;
-  border-radius: 10px;
-  padding: 12px 14px;
-  font-family: var(--font, "Poppins", "Segoe UI", sans-serif);
-  font-size: 16px;
-  color: #1a1a1a;
-  background: #ffffff;
-  outline: none;
-  transition:
-    border-color 0.2s,
-    box-shadow 0.2s;
-  box-sizing: border-box;
-  min-height: 48px;
-  -webkit-appearance: none;
-  appearance: none;
+
+/* 4. Every input/textarea — identical baseline */
+.contact-right .deal-input,
+.contact-right .input-name,
+.contact-right .input-phone,
+.contact-right .input-email,
+.contact-right .input-message {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  border: 1.5px solid #ef4136 !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  font-family: "Poppins", "Segoe UI", sans-serif !important;
+  font-size: 16px !important;
+  color: #1a1a1a !important;
+  background: #ffffff !important;
+  outline: none !important;
+  min-height: 48px !important;
+  margin: 0 !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
 }
-.deal-input::placeholder {
-  color: rgba(239, 65, 54, 0.55);
+
+.contact-right .deal-input::placeholder,
+.contact-right .input-name::placeholder,
+.contact-right .input-phone::placeholder,
+.contact-right .input-email::placeholder,
+.contact-right .input-message::placeholder {
+  color: rgba(239, 65, 54, 0.55) !important;
 }
-.deal-input:focus {
-  border-color: #c0392b;
-  box-shadow: 0 0 0 3px rgba(239, 65, 54, 0.1);
-  background: #fff;
+
+.contact-right .deal-input:focus,
+.contact-right .input-name:focus,
+.contact-right .input-phone:focus,
+.contact-right .input-email:focus,
+.contact-right .input-message:focus {
+  border-color: #c0392b !important;
+  box-shadow: 0 0 0 3px rgba(239, 65, 54, 0.1) !important;
+  background: #fff !important;
 }
-.deal-textarea {
-  min-height: 120px;
-  resize: vertical;
+
+/* 5. Textarea */
+.contact-right .deal-textarea,
+.contact-right .input-message {
+  min-height: 120px !important;
+  resize: vertical !important;
 }
-.deal-submit-btn {
-  align-self: flex-start;
+
+/* 6. intl-tel-input wrapper — must not introduce any spacing of its own */
+.contact-right .iti {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Phone input inside iti wrapper */
+.contact-right .iti input[type="tel"],
+.contact-right .iti .input-phone {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding-left: 90px !important; /* space for flag + dial code */
+  margin: 0 !important;
+}
+
+/* 7. Submit button */
+.contact-right .deal-submit-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: flex-start !important;
   background: #009848 !important;
   color: #ffffff !important;
-  border: none;
-  border-radius: 50px;
-  padding: 14px 40px;
-  font-family: var(--font, "Poppins", "Segoe UI", sans-serif);
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 152, 72, 0.28);
-  transition:
-    background 0.2s,
-    transform 0.15s,
-    box-shadow 0.2s;
-  min-height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  touch-action: manipulation;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 14px 40px !important;
+  font-family: "Poppins", "Segoe UI", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 16px rgba(0, 152, 72, 0.28) !important;
+  min-height: 52px !important;
+  margin: 0 !important;
+  touch-action: manipulation !important;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
 }
-.deal-submit-btn:hover:not(:disabled) {
+.contact-right .deal-submit-btn:hover:not(:disabled) {
   background: #007a3a !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 152, 72, 0.36);
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0, 152, 72, 0.36) !important;
 }
-.deal-submit-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.contact-right .deal-submit-btn:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
   transform: none !important;
 }
+
+/* 8. Mobile: widen button, keep same 18px gap */
 @media (max-width: 768px) {
   .contact-section {
     flex-direction: column;
@@ -1687,46 +1739,13 @@ button[type="submit"] {
   .contact-right {
     padding-bottom: 32px;
   }
-  .deal-row {
-    flex-direction: column;
-  }
   .contact-mascot {
     max-width: 200px;
   }
-  .deal-submit-btn {
+  .contact-right .deal-submit-btn {
     width: 100% !important;
+    align-self: stretch !important;
   }
-}
-
-/* ── intl-tel-input inside contact form deal-row ─────────────────────────── */
-.deal-row {
-  min-width: 0;
-}
-
-.deal-row > * {
-  min-width: 0;
-  flex: 1 1 0;
-}
-
-/* The .iti wrapper injected by intl-tel-input must not overflow its flex cell */
-.deal-row .iti {
-  width: 100%;
-  display: block;
-  min-width: 0;
-}
-
-.deal-row .iti .input-phone,
-.deal-row .iti input[type="tel"] {
-  width: 100%;
-  box-sizing: border-box;
-  padding-left: 90px; /* room for flag + dial code */
-  min-height: 48px;
-}
-
-/* Keep email aligned with the iti-wrapped phone */
-.deal-row .input-email {
-  width: 100%;
-  box-sizing: border-box;
 }
 
 /* ── Join us Instagram row fix ───────────────────────────────────────────── */
