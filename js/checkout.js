@@ -440,7 +440,9 @@ function renderSummaryItems() {
 
   summaryItems.innerHTML = cartItems
     .map((item) => {
-      const displayPrice = formatDisplayPrice(getItemBasePriceINR(item));
+      const displayPrice = formatDisplayPrice(
+        getItemBasePriceINR(item) * item.quantity,
+      );
       return `
       <div class="co-summary__item">
         <img class="co-summary__item-img"
@@ -449,7 +451,9 @@ function renderSummaryItems() {
              onerror="this.style.background='#f0f0f0';this.src=''" />
         <div class="co-summary__item-info">
           <div class="co-summary__item-name">${escapeHtml(item.name)}</div>
-          <div class="co-summary__item-qty">Qty: ${item.quantity}</div>
+          <div class="co-summary__item-qty">
+            Qty: ${item.quantity}
+          </div>
         </div>
         <div class="co-summary__item-price">${displayPrice}</div>
       </div>`;
@@ -491,12 +495,14 @@ function getItemBasePriceINR(item) {
 
 function formatDisplayPrice(baseAmountINR) {
   if (!pricingReady || !window.userCurrency || window.userCurrency === "INR") {
-    return "\u20b9" + parseFloat(baseAmountINR).toFixed(2);
+    return "₹" + (parseFloat(baseAmountINR) || 0).toFixed(2);
   }
+
   const converted = convertCurrency(
     parseFloat(baseAmountINR) || 0,
     window.userCurrency,
   );
+
   return formatCurrencyAmount(converted, window.userCurrency);
 }
 
@@ -504,6 +510,7 @@ function updateSummary() {
   if (!cartItems.length) return;
 
   const subtotalINR = calculateOrderTotalINR();
+  renderSummaryItems();
   console.log("[Checkout Currency]", window.userCurrency, subtotalINR);
 
   subtotalEl.textContent = formatDisplayPrice(subtotalINR);
@@ -734,12 +741,18 @@ async function launchRazorpay(totalINR) {
   // Render free tier cold-starts can return non-JSON. Retry once after a short wait.
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
+      const currency = window.userCurrency || "INR";
+
+      const displayAmount =
+        currency === "INR" ? totalINR : convertCurrency(totalINR, currency);
+
       const res = await fetch(`${API}/create-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          amount: totalINR,
-          amountPaise: Math.round(totalINR * 100),
+          amount: displayAmount,
+          currency: currency,
+          country: shippingCountry || ipCountryCode || "IN",
         }),
       });
 

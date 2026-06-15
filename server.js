@@ -178,12 +178,9 @@ app.post("/verify-otp", async (req, res) => {
 // Returns: { success: true, order }
 app.post("/create-order", async (req, res) => {
   const amount = parseFloat(req.body.amount);
-  const amountPaiseFromBody = parseInt(req.body.amountPaise, 10);
+  const currency = String(req.body.currency || "INR").toUpperCase();
 
-  if (
-    (!amount || amount <= 0) &&
-    (!amountPaiseFromBody || amountPaiseFromBody <= 0)
-  ) {
+  if (!amount || amount <= 0) {
     return res.status(400).json({ error: "Valid amount (INR) is required." });
   }
 
@@ -193,11 +190,8 @@ app.post("/create-order", async (req, res) => {
 
   try {
     const options = {
-      amount:
-        amountPaiseFromBody > 0
-          ? amountPaiseFromBody
-          : Math.round(amount * 100),
-      currency: "INR",
+      amount: Math.round(amount * 100),
+      currency: currency,
       receipt: "receipt_" + Date.now(),
     };
 
@@ -207,12 +201,9 @@ app.post("/create-order", async (req, res) => {
     return res.json({ success: true, order });
   } catch (err) {
     console.error("[create-order] Razorpay error:", err);
-    return res
-      .status(502)
-      .json({
-        error:
-          err.error?.description || err.message || "Order creation failed.",
-      });
+    return res.status(502).json({
+      error: err.error?.description || err.message || "Order creation failed.",
+    });
   }
 });
 
