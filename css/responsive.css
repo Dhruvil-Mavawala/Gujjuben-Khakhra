@@ -520,7 +520,7 @@ select {
 
   .frame-5476 {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr !important;
     gap: 12px !important;
   }
 
@@ -557,32 +557,39 @@ select {
 
 @media (max-width: 480px) {
   .frame-5476 {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    width: 100% !important;
+  }
+
+  .category {
+    width: 100% !important;
   }
 
   .frame-2 {
-    height: 110px !important;
+    height: 220px !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+
+  .frame-2 img,
+  .cat-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
   }
 
   .khakhra,
   .bhakhri,
   .coin-khakhra {
-    font-size: 16px !important;
+    font-size: 26px !important;
+    line-height: 1.1 !important;
+    margin-top: 10px !important;
   }
 
   .view-all-products {
-    font-size: 11px !important;
-  }
-}
-@media (max-width: 480px) {
-  .frame-5476 {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-
-  .frame-2 {
-    height: 180px !important;
+    font-size: 13px !important;
   }
 }
 
@@ -2180,5 +2187,3 @@ img {
 ========================================= */
 
 /* No deal-row / iti overrides here — productlist.css owns them */
-
-

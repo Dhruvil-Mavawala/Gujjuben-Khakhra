@@ -320,28 +320,26 @@ body {
 }
 .about-us2 {
   width: 100%;
-  padding: 56px 40px;
+  padding: 0px 40px;
   display: flex;
   flex-direction: row;
-  gap: 48px;
+  gap: 88px;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   position: relative;
   overflow: visible;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 80 auto;
   box-sizing: border-box;
 }
 .frame-5473 {
   display: flex;
+  width: 653px;
   flex-direction: column;
-  gap: 24px;
-  align-items: flex-start;
   justify-content: center;
-  flex: 1 1 0;
-  min-width: 0;
-  position: relative;
+  align-items: flex-start;
+  gap: 24.448px;
 }
 .frame-5472 {
   display: flex;
@@ -353,37 +351,42 @@ body {
   position: relative;
 }
 .about-us3 {
-  color: var(--secondary-colour, #ef4136);
-  text-align: left;
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
+  color: #ef4136 !important;
+  text-align: left !important;
+
+  font-family: "Poppins", sans-serif !important;
+  font-size: 20px;
+  font-weight: 800;
+
   text-transform: uppercase;
-  position: relative;
-  align-self: stretch;
+  letter-spacing: 0.8px;
+
   width: 100%;
+  align-self: flex-start !important;
+
+  margin-bottom: 20px;
 }
 .what-started-as-a-home-kitchen-passion-for-gujarati-flavors-has-grown-into-a-brand-trusted-by-families-everywhere {
-  color: var(--secondary-colour, #ef4136);
-  text-align: left;
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  font-size: clamp(20px, 2.5vw, 28px);
-  line-height: 1.45;
-  font-weight: 600;
-  position: relative;
-  align-self: stretch;
+  color: #ef4136;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 153%;
+  width: 653px;
+  max-width: 653px;
 }
 .every-bite-of-gujjuben-s-snacks-reflects-the-same-love-and-care-that-a-gujarati-mom-puts-into-her-cooking-simple-pure-and-full-of-happiness {
-  color: #2b2b2b;
+  color: #333;
   text-align: left;
   font-family: "Poppins", "Segoe UI", sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 18px;
+  line-height: 1.7;
   font-weight: 400;
   position: relative;
   width: 100%;
-  max-width: 100%;
+  margin-bottom: 40px;
+  max-width: 520px;
 }
 .button-main2 {
   flex-shrink: 0;
@@ -430,14 +433,12 @@ body {
   white-space: nowrap;
 }
 .frame-5474 {
-  flex: 0 0 auto;
-  width: min(420px, 42%);
-  height: auto;
-  position: relative;
-  overflow: visible;
+  width: 650px;
+  height: 343px;
+
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .frame-5484 {
   display: flex;
@@ -2085,7 +2086,7 @@ body {
 .about-us3 {
   font-family: var(--font, "Poppins", sans-serif) !important;
   font-weight: 800 !important;
-  color: var(--text, #1a1a1a) !important;
+  color: var(--text, #f40202) !important;
 }
 
 /* ═══════════════════════════════════════════════
@@ -2491,7 +2492,7 @@ body {
 @media (max-width: 640px) {
   #category-container,
   .frame-5476 {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr !important;
     gap: 12px !important;
   }
 }
@@ -2556,9 +2557,11 @@ img {
 
   /* About Us */
   .about-us2 {
-    flex-direction: column;
-    padding: 32px 16px;
-    gap: 28px;
+    display: flex;
+    padding: 38px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 21px;
   }
   .frame-5473,
   .frame-5472 {
@@ -2572,6 +2575,8 @@ img {
   }
   .every-bite-of-gujjuben-s-snacks-reflects-the-same-love-and-care-that-a-gujarati-mom-puts-into-her-cooking-simple-pure-and-full-of-happiness {
     width: 100%;
+    line-height: 1.6;
+    font-size: 18px !important;
   }
 
   /* Why Our Khakhra */
@@ -2631,11 +2636,9 @@ img {
 
   /* About Us */
   .about-us2 {
+    flex-direction: column;
     padding: 24px 12px;
     gap: 20px;
-  }
-  .what-started-as-a-home-kitchen-passion-for-gujarati-flavors-has-grown-into-a-brand-trusted-by-families-everywhere {
-    font-size: 22px !important;
   }
 
   /* Popular Categories */
@@ -2700,6 +2703,15 @@ img {
   }
   .frame-5351 {
     gap: 20px;
+  }
+  .frame-5473 {
+    align-items: flex-start !important;
+    width: 100%;
+  }
+  .what-started-as-a-home-kitchen-passion-for-gujarati-flavors-has-grown-into-a-brand-trusted-by-families-everywhere {
+    width: 100%;
+    max-width: 100%;
+    font-size: 42px;
   }
   .union2 {
     width: 140px;
@@ -2806,6 +2818,10 @@ img {
   .why-khakhra-1 {
     width: 100% !important;
     height: auto !important;
+  }
+  .frame-5474 {
+    width: 100%;
+    height: auto;
   }
 
   .frame-5496 {
