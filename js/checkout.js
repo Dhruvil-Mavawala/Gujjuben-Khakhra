@@ -94,7 +94,7 @@ function markField(id, valid, msg) {
   if (!input) return;
   input.classList.toggle("valid", valid);
   input.classList.toggle("invalid", !valid);
-  if (err) err.textContent = valid ? "" : (msg || "Required");
+  if (err) err.textContent = valid ? "" : msg || "Required";
 }
 
 function clearField(id) {
@@ -105,7 +105,8 @@ function clearField(id) {
 }
 
 function setPostalLoading(loading) {
-  if (postalSpinner) postalSpinner.style.display = loading ? "inline-block" : "none";
+  if (postalSpinner)
+    postalSpinner.style.display = loading ? "inline-block" : "none";
 }
 
 function setPostalStatus(message, tone) {
@@ -117,10 +118,11 @@ function setPostalStatus(message, tone) {
 function getRegionNames() {
   try {
     const displayNames = new Intl.DisplayNames(["en"], { type: "region" });
-    if (!Intl.supportedValuesOf) throw new Error("supportedValuesOf unavailable");
+    if (!Intl.supportedValuesOf)
+      throw new Error("supportedValuesOf unavailable");
     return Intl.supportedValuesOf("region")
-      .filter(code => /^[A-Z]{2}$/.test(code))
-      .map(code => [code, displayNames.of(code) || code]);
+      .filter((code) => /^[A-Z]{2}$/.test(code))
+      .map((code) => [code, displayNames.of(code) || code]);
   } catch {
     return COUNTRY_FALLBACKS;
   }
@@ -130,7 +132,7 @@ function countryFlag(code) {
   if (!/^[A-Z]{2}$/.test(code || "")) return "";
   return code
     .split("")
-    .map(char => String.fromCodePoint(127397 + char.charCodeAt(0)))
+    .map((char) => String.fromCodePoint(127397 + char.charCodeAt(0)))
     .join("");
 }
 
@@ -143,21 +145,33 @@ function populateCountrySelect() {
     .sort((a, b) => {
       const ai = COUNTRY_PRIORITY.indexOf(a[0]);
       const bi = COUNTRY_PRIORITY.indexOf(b[0]);
-      if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+      if (ai !== -1 || bi !== -1)
+        return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
       return a[1].localeCompare(b[1]);
     });
 
-  countrySelect.innerHTML = '<option value="">Select country...</option>' + countries
-    .map(([code, name]) => `<option value="${code}">${countryFlag(code)} ${escapeHtml(name)}</option>`)
-    .join("");
+  countrySelect.innerHTML =
+    '<option value="">Select country...</option>' +
+    countries
+      .map(
+        ([code, name]) =>
+          `<option value="${code}">${countryFlag(code)} ${escapeHtml(name)}</option>`,
+      )
+      .join("");
 }
 
 function getCountryName(code) {
   if (!code) return "";
-  const option = countrySelect?.querySelector(`option[value="${String(code).toUpperCase()}"]`);
+  const option = countrySelect?.querySelector(
+    `option[value="${String(code).toUpperCase()}"]`,
+  );
   if (option) return option.textContent.replace(/^[^\w(]+/u, "").trim();
   try {
-    return new Intl.DisplayNames(["en"], { type: "region" }).of(String(code).toUpperCase()) || code;
+    return (
+      new Intl.DisplayNames(["en"], { type: "region" }).of(
+        String(code).toUpperCase(),
+      ) || code
+    );
   } catch {
     return code;
   }
@@ -167,7 +181,8 @@ async function detectIPCountry() {
   try {
     await initPricing();
     ipCountryCode = String(window.userCountryCode || "IN").toUpperCase();
-    ipCountryName = window.userCountry || getCountryName(ipCountryCode) || "India";
+    ipCountryName =
+      window.userCountry || getCountryName(ipCountryCode) || "India";
   } catch {
     ipCountryCode = "IN";
     ipCountryName = "India";
@@ -190,19 +205,28 @@ function initPhoneInput() {
     separateDialCode: true,
     countrySearch: true,
     dropdownParent: document.body,
-    loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js"),
+    loadUtils: () =>
+      import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js"),
   });
 
   input.addEventListener("countrychange", () => {
     const data = phoneInput.getSelectedCountryData() || {};
-    document.getElementById("co-dial-code").value = data.dialCode ? "+" + data.dialCode : "";
-    document.getElementById("co-phone-country").value = (data.iso2 || "").toUpperCase();
+    document.getElementById("co-dial-code").value = data.dialCode
+      ? "+" + data.dialCode
+      : "";
+    document.getElementById("co-phone-country").value = (
+      data.iso2 || ""
+    ).toUpperCase();
     clearField("co-phone");
   });
 
   const data = phoneInput.getSelectedCountryData() || {};
-  document.getElementById("co-dial-code").value = data.dialCode ? "+" + data.dialCode : "";
-  document.getElementById("co-phone-country").value = (data.iso2 || "").toUpperCase();
+  document.getElementById("co-dial-code").value = data.dialCode
+    ? "+" + data.dialCode
+    : "";
+  document.getElementById("co-phone-country").value = (
+    data.iso2 || ""
+  ).toUpperCase();
 }
 
 function setPhoneCountry(code) {
@@ -214,10 +238,13 @@ function getPhoneData() {
   const raw = document.getElementById("co-phone")?.value.trim() || "";
   const selected = phoneInput?.getSelectedCountryData?.() || {};
   const dialCode = selected.dialCode ? "+" + selected.dialCode : "";
-  const fullInternationalPhone = phoneInput?.getNumber?.() || (dialCode + raw.replace(/\D/g, ""));
+  const fullInternationalPhone =
+    phoneInput?.getNumber?.() || dialCode + raw.replace(/\D/g, "");
 
   return {
-    country: getCountryName((selected.iso2 || shippingCountry || "").toUpperCase()),
+    country: getCountryName(
+      (selected.iso2 || shippingCountry || "").toUpperCase(),
+    ),
     countryCode: (selected.iso2 || "").toUpperCase(),
     dialCode,
     phone: raw.replace(/[^\d]/g, ""),
@@ -238,7 +265,9 @@ function handleCountryChange(code, options = {}) {
   if (code && options.syncPhone !== false) setPhoneCountry(code);
 
   deliveryEst.textContent = code
-    ? (isIndia ? DELIVERY_ESTIMATES.IN : DELIVERY_ESTIMATES.INTL)
+    ? isIndia
+      ? DELIVERY_ESTIMATES.IN
+      : DELIVERY_ESTIMATES.INTL
     : "Select country to see estimate";
 
   clearField("co-country");
@@ -278,15 +307,20 @@ function showSecurityModal() {
   modal.style.display = "flex";
 }
 
-document.getElementById("security-modal-close")?.addEventListener("click", () => {
-  document.getElementById("security-modal").style.display = "none";
-});
+document
+  .getElementById("security-modal-close")
+  ?.addEventListener("click", () => {
+    document.getElementById("security-modal").style.display = "none";
+  });
 
 function enableManualAddress(message) {
-  [cityInput, stateInput, countrySelect].forEach(input => {
+  [cityInput, stateInput, countrySelect].forEach((input) => {
     if (input) input.disabled = false;
   });
-  setPostalStatus(message || "Enter city, state, and country manually.", "warning");
+  setPostalStatus(
+    message || "Enter city, state, and country manually.",
+    "warning",
+  );
 }
 
 async function lookupPostalAddress() {
@@ -303,7 +337,9 @@ async function lookupPostalAddress() {
     let result = null;
 
     if (countryCode === "IN") {
-      const res = await fetch(`https://api.postalpincode.in/pincode/${encodeURIComponent(postalCode)}`);
+      const res = await fetch(
+        `https://api.postalpincode.in/pincode/${encodeURIComponent(postalCode)}`,
+      );
       const data = await res.json();
       const record = data?.[0];
       const office = record?.PostOffice?.[0];
@@ -316,7 +352,9 @@ async function lookupPostalAddress() {
         };
       }
     } else {
-      const res = await fetch(`https://api.zippopotam.us/${countryCode.toLowerCase()}/${encodeURIComponent(postalCode)}`);
+      const res = await fetch(
+        `https://api.zippopotam.us/${countryCode.toLowerCase()}/${encodeURIComponent(postalCode)}`,
+      );
       if (res.ok) {
         const data = await res.json();
         const place = data?.places?.[0];
@@ -325,14 +363,18 @@ async function lookupPostalAddress() {
             city: place["place name"] || "",
             state: place.state || place["state abbreviation"] || "",
             country: data.country || getCountryName(countryCode),
-            countryCode: (data["country abbreviation"] || countryCode).toUpperCase(),
+            countryCode: (
+              data["country abbreviation"] || countryCode
+            ).toUpperCase(),
           };
         }
       }
     }
 
     if (!result) {
-      enableManualAddress("Postal lookup failed. You can enter the address manually.");
+      enableManualAddress(
+        "Postal lookup failed. You can enter the address manually.",
+      );
       return;
     }
 
@@ -347,12 +389,17 @@ async function lookupPostalAddress() {
     if (result.city) markField("co-city", true);
     if (result.state) markField("co-state", true);
     if (result.countryCode) markField("co-country", true);
-    setPostalStatus("Postal code found. City, state, and country filled.", "success");
+    setPostalStatus(
+      "Postal code found. City, state, and country filled.",
+      "success",
+    );
     validateSecurity();
     updateSummary();
   } catch (err) {
     console.warn("[Checkout] Postal lookup failed:", err);
-    enableManualAddress("Postal lookup failed. You can enter the address manually.");
+    enableManualAddress(
+      "Postal lookup failed. You can enter the address manually.",
+    );
   } finally {
     setPostalLoading(false);
   }
@@ -368,11 +415,12 @@ async function loadCartData() {
 
   try {
     const snap = await db.ref("products").once("value");
-    snap.forEach(child => {
+    snap.forEach((child) => {
       const p = child.val() || {};
       productPricingMap[child.key] = {
         indiaPrice: parseFloat(p.indiaPrice ?? p.price) || 0,
-        internationalPrice: parseFloat(p.internationalPrice ?? p.indiaPrice ?? p.price) || 0,
+        internationalPrice:
+          parseFloat(p.internationalPrice ?? p.indiaPrice ?? p.price) || 0,
       };
     });
   } catch (err) {
@@ -390,9 +438,10 @@ function renderSummaryItems() {
     return;
   }
 
-  summaryItems.innerHTML = cartItems.map(item => {
-    const displayPrice = formatDisplayPrice(getItemBasePriceINR(item));
-    return `
+  summaryItems.innerHTML = cartItems
+    .map((item) => {
+      const displayPrice = formatDisplayPrice(getItemBasePriceINR(item));
+      return `
       <div class="co-summary__item">
         <img class="co-summary__item-img"
              src="${escapeHtml(item.image || "")}"
@@ -404,34 +453,50 @@ function renderSummaryItems() {
         </div>
         <div class="co-summary__item-price">${displayPrice}</div>
       </div>`;
-  }).join("");
+    })
+    .join("");
 }
 
 function getItemPricing(item) {
   const mapped = productPricingMap[item.id] || {};
   return {
-    indiaPrice: parseFloat(mapped.indiaPrice ?? item.indiaPrice ?? item.price) || 0,
-    internationalPrice: parseFloat(mapped.internationalPrice ?? item.internationalPrice ?? mapped.indiaPrice ?? item.indiaPrice ?? item.price) || 0,
+    indiaPrice:
+      parseFloat(mapped.indiaPrice ?? item.indiaPrice ?? item.price) || 0,
+    internationalPrice:
+      parseFloat(
+        mapped.internationalPrice ??
+          item.internationalPrice ??
+          mapped.indiaPrice ??
+          item.indiaPrice ??
+          item.price,
+      ) || 0,
   };
 }
 
 function getPricingCountryCode() {
-  return String(shippingCountry || ipCountryCode || window.userCountryCode || "IN").toUpperCase();
+  return String(
+    shippingCountry || ipCountryCode || window.userCountryCode || "IN",
+  ).toUpperCase();
 }
 
 function getItemBasePriceINR(item) {
   const pricing = getItemPricing(item);
-  const product = { indiaPrice: pricing.indiaPrice, internationalPrice: pricing.internationalPrice };
-  return typeof getBasePrice === "function"
-    ? getBasePrice(product, getPricingCountryCode())
-    : (getPricingCountryCode() === "IN" ? pricing.indiaPrice : pricing.internationalPrice);
+
+  if (getPricingCountryCode() === "IN") {
+    return pricing.indiaPrice;
+  }
+
+  return pricing.internationalPrice;
 }
 
 function formatDisplayPrice(baseAmountINR) {
   if (!pricingReady || !window.userCurrency || window.userCurrency === "INR") {
     return "\u20b9" + parseFloat(baseAmountINR).toFixed(2);
   }
-  const converted = convertCurrency(parseFloat(baseAmountINR) || 0, window.userCurrency);
+  const converted = convertCurrency(
+    parseFloat(baseAmountINR) || 0,
+    window.userCurrency,
+  );
   return formatCurrencyAmount(converted, window.userCurrency);
 }
 
@@ -439,14 +504,16 @@ function updateSummary() {
   if (!cartItems.length) return;
 
   const subtotalINR = calculateOrderTotalINR();
+  console.log("[Checkout Currency]", window.userCurrency, subtotalINR);
 
   subtotalEl.textContent = formatDisplayPrice(subtotalINR);
   shippingEl.textContent = "Free";
   totalEl.textContent = formatDisplayPrice(subtotalINR);
 
-  currencyNote.textContent = pricingReady && window.userCurrency && window.userCurrency !== "INR"
-    ? `Free Shipping Worldwide. Prices shown in ${window.userCurrency}. Payment processed in INR.`
-    : "Free Shipping Worldwide";
+  currencyNote.textContent =
+    pricingReady && window.userCurrency && window.userCurrency !== "INR"
+      ? `Free Shipping Worldwide. Prices shown in ${window.userCurrency}. Payment processed in INR.`
+      : "Free Shipping Worldwide";
 }
 
 function updatePayButton() {
@@ -461,7 +528,11 @@ function validatePhone() {
   }
 
   if (phoneInput?.isValidNumber && !phoneInput.isValidNumber()) {
-    markField("co-phone", false, "Enter a valid phone number for the selected country.");
+    markField(
+      "co-phone",
+      false,
+      "Enter a valid phone number for the selected country.",
+    );
     return false;
   }
 
@@ -546,7 +617,7 @@ function buildShippingAddress() {
 }
 
 function buildOrderItems() {
-  return cartItems.map(item => {
+  return cartItems.map((item) => {
     const p = getItemPricing(item);
     return {
       productId: item.id,
@@ -580,9 +651,10 @@ async function createOrder(paymentMethod, paymentStatus, razorpayPaymentId) {
   const { subtotalINR, totalINR } = calculateTotals();
 
   const currency = window.userCurrency || "INR";
-  const exchangeRate = (currency !== "INR" && window.convertCurrency)
-    ? window.convertCurrency(1, currency)
-    : 1;
+  const exchangeRate =
+    currency !== "INR" && window.convertCurrency
+      ? window.convertCurrency(1, currency)
+      : 1;
 
   const orderRef = db.ref("orders").push();
   const orderId = orderRef.key;
@@ -636,9 +708,9 @@ function closePaymentModal() {
   document.getElementById("payment-modal").style.display = "none";
 }
 
-document.getElementById("payment-modal-close")?.addEventListener("click", closePaymentModal);
-
-
+document
+  .getElementById("payment-modal-close")
+  ?.addEventListener("click", closePaymentModal);
 
 document.getElementById("pay-online")?.addEventListener("click", () => {
   closePaymentModal();
@@ -665,7 +737,10 @@ async function launchRazorpay(totalINR) {
       const res = await fetch(`${API}/create-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: totalINR, amountPaise: Math.round(totalINR * 100) }),
+        body: JSON.stringify({
+          amount: totalINR,
+          amountPaise: Math.round(totalINR * 100),
+        }),
       });
 
       // Guard: ensure response is JSON before parsing
@@ -673,11 +748,16 @@ async function launchRazorpay(totalINR) {
       if (!contentType.includes("application/json")) {
         const text = await res.text();
         if (attempt === 1) {
-          console.warn("[Checkout] Non-JSON on attempt 1, retrying in 4s:", text.slice(0, 120));
-          await new Promise(r => setTimeout(r, 4000));
+          console.warn(
+            "[Checkout] Non-JSON on attempt 1, retrying in 4s:",
+            text.slice(0, 120),
+          );
+          await new Promise((r) => setTimeout(r, 4000));
           continue;
         }
-        throw new Error("Payment server is starting up. Please wait a moment and try again.");
+        throw new Error(
+          "Payment server is starting up. Please wait a moment and try again.",
+        );
       }
 
       const data = await res.json();
@@ -714,7 +794,8 @@ async function launchRazorpay(totalINR) {
     },
     theme: { color: "#0b8f3c" },
     handler: async function (response) {
-      const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = response;
+      const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
+        response;
       setPayBtnLoading(true);
       showFormError("");
 
@@ -722,7 +803,11 @@ async function launchRazorpay(totalINR) {
         const verifyRes = await fetch(`${API}/verify-payment`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ razorpay_order_id, razorpay_payment_id, razorpay_signature }),
+          body: JSON.stringify({
+            razorpay_order_id,
+            razorpay_payment_id,
+            razorpay_signature,
+          }),
         });
         const verifyData = await verifyRes.json();
         if (!verifyRes.ok || !verifyData.success) {
@@ -730,17 +815,27 @@ async function launchRazorpay(totalINR) {
         }
       } catch (err) {
         console.error("[Checkout] Verification failed:", err);
-        showFormError("Payment received but verification failed. Contact support. Payment ID: " + razorpay_payment_id);
+        showFormError(
+          "Payment received but verification failed. Contact support. Payment ID: " +
+            razorpay_payment_id,
+        );
         setPayBtnLoading(false);
         return;
       }
 
       try {
-        const orderId = await createOrder("ONLINE", "Paid", razorpay_payment_id);
+        const orderId = await createOrder(
+          "ONLINE",
+          "Paid",
+          razorpay_payment_id,
+        );
         window.location.href = "/order-success?orderId=" + orderId;
       } catch (err) {
         console.error("[Checkout] Firebase order save failed:", err);
-        showFormError("Payment verified but order save failed. Contact support with payment ID: " + razorpay_payment_id);
+        showFormError(
+          "Payment verified but order save failed. Contact support with payment ID: " +
+            razorpay_payment_id,
+        );
         setPayBtnLoading(false);
       }
     },
@@ -798,11 +893,13 @@ editManualBtn?.addEventListener("click", () => {
   cityInput?.focus();
 });
 
-["co-name", "co-addr1", "co-city", "co-state"].forEach(id => {
+["co-name", "co-addr1", "co-city", "co-state"].forEach((id) => {
   document.getElementById(id)?.addEventListener("input", () => clearField(id));
 });
 
-document.getElementById("co-phone")?.addEventListener("input", () => clearField("co-phone"));
+document
+  .getElementById("co-phone")
+  ?.addEventListener("input", () => clearField("co-phone"));
 
 window.addEventListener("pricing-ready", () => {
   pricingReady = true;
