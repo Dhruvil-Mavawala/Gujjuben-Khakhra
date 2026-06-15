@@ -1,11 +1,22 @@
 /* ── Reset ───────────────────────────────────── */
 @font-face {
   font-family: "SauceTomato-Regular";
-  src: url('../fonts/Sauce Tomato.otf') format('opentype');
-  font-weight: 400; font-style: normal;
+  src: url("../fonts/Sauce Tomato.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
 }
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterTight-Medium", sans-serif; }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f5f5f5;
+  overflow-x: hidden;
+  font-family: "Segoe UI", "InterTight-Medium", sans-serif;
+}
 
 /* ── Page wrapper ────────────────────────────── */
 .cart {
@@ -29,21 +40,44 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 12px rgba(239,65,54,0.18);
+  box-shadow: 0 2px 12px rgba(239, 65, 54, 0.18);
 }
-.union { height: 52px; width: auto; display: block; }
-.frame-5470 { display: flex; align-items: center; gap: 20px; }
-.features-tab { display: flex; gap: 36px; align-items: center; }
-.home, .about-us, .our-products, .deal-with-us {
+.union {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+.frame-5470 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.features-tab {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+.home,
+.about-us,
+.our-products,
+.deal-with-us {
   color: #fff;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: opacity 0.15s;
 }
-.home:hover, .about-us:hover, .our-products:hover, .deal-with-us:hover { opacity: 0.75; }
+.home:hover,
+.about-us:hover,
+.our-products:hover,
+.deal-with-us:hover {
+  opacity: 0.75;
+}
 
-.cart-button { cursor: pointer; position: relative; }
+.cart-button {
+  cursor: pointer;
+  position: relative;
+}
 .component-2-primary-button {
   background: #009848;
   border-radius: 50px;
@@ -53,11 +87,19 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   align-items: center;
   gap: 8px;
   height: 44px;
-  box-shadow: 0 3px 0 rgba(0,0,0,0.2);
-  transition: opacity 0.15s, transform 0.15s;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
 }
-.component-2-primary-button:hover { opacity: 0.88; transform: translateY(-1px); }
-.mdi-cart-outline { width: 26px; height: 26px; }
+.component-2-primary-button:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+.mdi-cart-outline {
+  width: 26px;
+  height: 26px;
+}
 .cart-count {
   background: #fff;
   color: #009848;
@@ -72,7 +114,7 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   position: absolute;
   top: -5px;
   right: -5px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* ══════════════════════════════════════════════
@@ -107,7 +149,7 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   max-width: 1100px;
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -125,7 +167,10 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   border-bottom: 1.5px solid #f0f0f0;
   gap: 0;
 }
-.product, .price, .quantity, .total {
+.product,
+.price,
+.quantity,
+.total {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -134,10 +179,16 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
 }
 
 /* Hide old SVG lines */
-.line-4, .line-5 { display: none; }
+.line-4,
+.line-5 {
+  display: none;
+}
 
 /* ── Cart rows container ──────────────────────── */
-#cart-items-container { display: flex; flex-direction: column; }
+#cart-items-container {
+  display: flex;
+  flex-direction: column;
+}
 
 /* Each row */
 .cart-row {
@@ -150,12 +201,22 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   transition: background 0.15s;
   animation: rowIn 0.28s ease both;
 }
-.cart-row:last-child { border-bottom: none; }
-.cart-row:hover { background: #fdfcfc; }
+.cart-row:last-child {
+  border-bottom: none;
+}
+.cart-row:hover {
+  background: #fdfcfc;
+}
 
 @keyframes rowIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Product cell */
@@ -179,7 +240,7 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   border-radius: 12px;
   object-fit: cover;
   display: block;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   background: #f5f5f5;
 }
 .frame-5505 {
@@ -207,10 +268,13 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   transition: opacity 0.15s;
   width: fit-content;
 }
-.remove:hover { opacity: 0.65; }
+.remove:hover {
+  opacity: 0.65;
+}
 
 /* Price / total cells — reset absolute positioning */
-.row-price, .row-total {
+.row-price,
+.row-total {
   font-size: 16px;
   font-weight: 700;
   color: #1a1a1a;
@@ -219,7 +283,9 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   top: auto;
   width: auto;
 }
-.row-total { color: #ef4136; }
+.row-total {
+  color: #ef4136;
+}
 
 /* Qty pill */
 .frame-5506 {
@@ -248,12 +314,17 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
   line-height: 1;
   padding: 0;
   flex-shrink: 0;
 }
-.qty-ctrl-btn:hover { background: #ef4136; color: #fff; }
+.qty-ctrl-btn:hover {
+  background: #ef4136;
+  color: #fff;
+}
 .qty-display {
   min-width: 40px;
   text-align: center;
@@ -274,7 +345,7 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   max-width: 1100px;
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
   padding: 24px 32px;
   display: flex;
   flex-direction: row;
@@ -293,7 +364,12 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   align-items: flex-start;
   width: auto;
 }
-.frame-5508 { display: flex; flex-direction: column; gap: 3px; width: auto; }
+.frame-5508 {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: auto;
+}
 
 .subtotal {
   font-size: 13px;
@@ -317,8 +393,16 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
 }
 
 /* Checkout button */
-.button-main { height: auto; position: static; flex-shrink: 0; }
-.frame-1 { position: static; padding: 0; display: block; }
+.button-main {
+  height: auto;
+  position: static;
+  flex-shrink: 0;
+}
+.frame-1 {
+  position: static;
+  padding: 0;
+  display: block;
+}
 .checkout-btn-wrap {
   display: inline-flex;
   align-items: center;
@@ -331,14 +415,20 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   font-family: "SauceTomato-Regular", sans-serif;
   font-size: 18px;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0,152,72,0.28);
-  transition: transform 0.15s, box-shadow 0.2s, filter 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 152, 72, 0.28);
+  transition:
+    transform 0.15s,
+    box-shadow 0.2s,
+    filter 0.2s;
   height: auto;
 }
-.checkout-btn-wrap::before { content: "🛒"; font-size: 18px; }
+.checkout-btn-wrap::before {
+  content: "🛒";
+  font-size: 18px;
+}
 .checkout-btn-wrap:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,152,72,0.36);
+  box-shadow: 0 8px 24px rgba(0, 152, 72, 0.36);
   filter: brightness(1.05);
 }
 .button {
@@ -364,8 +454,14 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   animation: fadeUp 0.5s ease both;
 }
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .empty-cart-icon {
   font-size: 96px;
@@ -375,9 +471,16 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   animation: cartBounce 2s ease-in-out infinite;
 }
 @keyframes cartBounce {
-  0%, 100% { transform: translateY(0) rotate(-4deg); }
-  35%       { transform: translateY(-16px) rotate(5deg); }
-  65%       { transform: translateY(-6px) rotate(-2deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  35% {
+    transform: translateY(-16px) rotate(5deg);
+  }
+  65% {
+    transform: translateY(-6px) rotate(-2deg);
+  }
 }
 .empty-cart-title {
   font-family: "SauceTomato-Regular", sans-serif;
@@ -403,13 +506,18 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   font-family: "SauceTomato-Regular", sans-serif;
   font-size: 18px;
   text-decoration: none;
-  box-shadow: 0 6px 20px rgba(239,65,54,0.30);
-  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 6px 20px rgba(239, 65, 54, 0.3);
+  transition:
+    transform 0.18s,
+    box-shadow 0.18s;
 }
-.empty-cart-btn::before { content: "🛍️"; font-size: 20px; }
+.empty-cart-btn::before {
+  content: "🛍️";
+  font-size: 20px;
+}
 .empty-cart-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(239,65,54,0.40);
+  box-shadow: 0 10px 28px rgba(239, 65, 54, 0.4);
 }
 
 /* ══════════════════════════════════════════════
@@ -426,7 +534,7 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
 .pm-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(3px);
 }
 .pm-card {
@@ -437,17 +545,41 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   width: 100%;
   max-width: 400px;
   text-align: center;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.18);
-  animation: pmPop 0.3s cubic-bezier(.34,1.56,.64,1) both;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+  animation: pmPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 @keyframes pmPop {
-  from { opacity: 0; transform: scale(0.88); }
-  to   { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
-.pm-title { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
-.pm-amount { font-size: 15px; color: #888; margin-bottom: 28px; }
-.pm-amount strong { color: #ef4136; font-size: 20px; font-weight: 800; }
-.pm-btns { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+.pm-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+.pm-amount {
+  font-size: 15px;
+  color: #888;
+  margin-bottom: 28px;
+}
+.pm-amount strong {
+  color: #ef4136;
+  font-size: 20px;
+  font-weight: 800;
+}
+.pm-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
 .pm-btn {
   padding: 14px;
   border: none;
@@ -455,13 +587,34 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.15s, opacity 0.2s;
+  transition:
+    transform 0.15s,
+    opacity 0.2s;
 }
-.pm-btn:hover { transform: translateY(-1px); opacity: 0.9; }
-.pm-cod    { background: #fff8f0; color: #e65100; border: 2px solid #ffcc80; }
-.pm-online { background: linear-gradient(135deg, #ef4136, #ff7043); color: #fff; }
-.pm-close  { background: none; border: none; font-size: 13px; color: #bbb; cursor: pointer; margin-top: 4px; }
-.pm-close:hover { color: #ef4136; }
+.pm-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+.pm-cod {
+  background: #fff8f0;
+  color: #e65100;
+  border: 2px solid #ffcc80;
+}
+.pm-online {
+  background: linear-gradient(135deg, #ef4136, #ff7043);
+  color: #fff;
+}
+.pm-close {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #bbb;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.pm-close:hover {
+  color: #ef4136;
+}
 
 /* ══════════════════════════════════════════════
    CONTACT / DEAL SECTION — exact match to index/home page
@@ -477,15 +630,61 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   gap: 48px;
   background: #ffffff;
 }
-.contact-left { width: 45%; display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
-.contact-us-label { color: #ef4136; font-family: var(--font-brand, "SauceTomato", serif); font-size: 14px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
-.contact-heading { color: #ef4136; font-family: var(--font-brand, "SauceTomato", serif); font-size: clamp(32px, 4vw, 52px); font-weight: 400; line-height: 1.1; }
-.contact-subtext { color: #555; font-family: var(--font, "Poppins", sans-serif); font-size: 14px; font-weight: 500; line-height: 1.6; max-width: 340px; }
-.contact-mascot { width: 100%; max-width: 420px; display: block; margin-top: 16px; align-self: flex-start; }
-.contact-right { flex: 1; min-width: 0; padding-bottom: 48px; }
-.deal-form { display: flex; flex-direction: column; gap: 14px; }
-.deal-field { display: flex; flex-direction: column; }
-.deal-row { display: flex; gap: 12px; }
+.contact-left {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.contact-us-label {
+  color: #ef4136;
+  font-family: var(--font-brand, "SauceTomato", serif);
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.contact-heading {
+  color: #ef4136;
+  font-family: var(--font-brand, "SauceTomato", serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+.contact-subtext {
+  color: #555;
+  font-family: var(--font, "Poppins", sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 340px;
+}
+.contact-mascot {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin-top: 16px;
+  align-self: flex-start;
+}
+.contact-right {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 48px;
+}
+.deal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.deal-field {
+  display: flex;
+  flex-direction: column;
+}
+.deal-row {
+  display: flex;
+  gap: 12px;
+}
 .deal-input {
   width: 100%;
   border: 1.5px solid #ef4136;
@@ -496,15 +695,26 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   color: #1a1a1a;
   background: #ffffff;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
   box-sizing: border-box;
   min-height: 48px;
   -webkit-appearance: none;
   appearance: none;
 }
-.deal-input::placeholder { color: rgba(239, 65, 54, 0.55); }
-.deal-input:focus { border-color: #c0392b; box-shadow: 0 0 0 3px rgba(239,65,54,0.10); background: #fff; }
-.deal-textarea { min-height: 120px; resize: vertical; }
+.deal-input::placeholder {
+  color: rgba(239, 65, 54, 0.55);
+}
+.deal-input:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(239, 65, 54, 0.1);
+  background: #fff;
+}
+.deal-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
 .deal-submit-btn {
   align-self: flex-start;
   background: #009848 !important;
@@ -517,15 +727,26 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(0, 152, 72, 0.28);
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
   min-height: 52px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   touch-action: manipulation;
 }
-.deal-submit-btn:hover:not(:disabled) { background: #007a3a !important; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 152, 72, 0.36); }
-.deal-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; }
+.deal-submit-btn:hover:not(:disabled) {
+  background: #007a3a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 152, 72, 0.36);
+}
+.deal-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
 
 /* ══════════════════════════════════════════════
    FOOTER
@@ -537,49 +758,213 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   border-radius: 20px;
   padding: 56px 48px;
   margin-top: 24px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
 }
-.frame-5363 { display: flex; flex-direction: column; gap: 28px; }
-.frame-5368 { display: flex; flex-direction: column; gap: 0; }
-.frame-5345 { display: flex; flex-direction: row; justify-content: space-between; flex-wrap: wrap; gap: 32px; }
-.frame-5339, .frame-5340, .frame-53452, .frame-5344 { display: flex; flex-direction: column; gap: 12px; }
-.corporate-office-production-unit, .sales-and-marketing-office, .contact-us2, .links {
-  color: #f0302d; font-family: "SauceTomato-Regular", sans-serif; font-size: 14px; font-weight: 400;
+.frame-5363 {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
-.frame-5338, .frame-5337 { display: flex; flex-direction: column; gap: 6px; }
+.frame-5368 {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.frame-5345 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.frame-5339,
+.frame-5340,
+.frame-53452,
+.frame-5344 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.corporate-office-production-unit,
+.sales-and-marketing-office,
+.contact-us2,
+.links {
+  color: #f0302d;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+.frame-5338,
+.frame-5337 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 ._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-395009,
 ._52-green-paladia-opp-raj-world-palanpur-canal-road-palanpor-surat-gujarat-india-3950092 {
-  color: #ef4136; font-size: 13px; line-height: 1.5; max-width: 200px;
+  color: #ef4136;
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 200px;
 }
-.frame-5365, .frame-5336, .frame-53382 { display: flex; flex-direction: column; gap: 6px; }
-.frame-5333, .frame-5361, .frame-5362 { display: flex; flex-direction: row; align-items: center; gap: 6px; }
-.mail { width: 16px; height: 16px; position: relative; overflow: hidden; flex-shrink: 0; }
-.group-54 { position: absolute; left: 0; top: 2px; }
-.group-55 { position: absolute; left: 0; top: 1px; }
-.link-instagram { color: #ef4136; font-size: 13px; font-weight: 500; }
-.frame-53622 { display: flex; align-items: center; gap: 6px; }
-.frame-5328 { display: flex; flex-direction: column; gap: 6px; }
-.link-contact-us, .link-about-us, .link-privacy-policy, .deal-with-us2 {
-  color: #f0302d; font-size: 13px; font-weight: 500; cursor: pointer;
+.frame-5365,
+.frame-5336,
+.frame-53382 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
-.line-3, .line-2 { border: none; border-top: 1px solid rgba(239,65,54,0.15); margin: 4px 0; }
-.frame-5491 { display: flex; flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; width: 100%; }
-.frame-5351 { display: flex; align-items: center; }
-.union2 { width: 160px; height: auto; }
-.frame-5367 { display: flex; flex-direction: row; align-items: center; gap: 10px; flex-wrap: wrap; }
-.certified-brand-by { color: #ef4136; font-family: "SauceTomato-Regular", sans-serif; font-size: 14px; }
-.frame-5366, .frame-53672 { display: flex; align-items: flex-end; gap: 8px; }
-.frame-5461 { border-radius: 50%; padding: 8px; display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; }
-.frame-5457 { width: 56px; height: auto; }
-.frame-5458 { width: 64px; height: 64px; position: relative; }
-.group { position: absolute; left: 0; top: 0; }
-.msme-logo-2 { width: 80px; height: 70px; overflow: hidden; position: relative; }
-.group2 { position: absolute; width: 85%; left: 7%; transform: translateY(-80px); }
-.frame-5354 { display: flex; flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-.gujjuben-s-khakhra-brand-all-rights-reserved { color: #f0302d; font-size: 12px; }
-.frame-5256 { display: flex; align-items: center; gap: 6px; }
-.socials { color: #f0302d; font-size: 12px; }
-.mdi-instagram, .ic-baseline-facebook { width: 18px; height: 18px; }
+.frame-5333,
+.frame-5361,
+.frame-5362 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+.mail {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.group-54 {
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+.group-55 {
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+.link-instagram {
+  color: #ef4136;
+  font-size: 13px;
+  font-weight: 500;
+}
+.frame-53622 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.frame-5328 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.link-contact-us,
+.link-about-us,
+.link-privacy-policy,
+.deal-with-us2 {
+  color: #f0302d;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.line-3,
+.line-2 {
+  border: none;
+  border-top: 1px solid rgba(239, 65, 54, 0.15);
+  margin: 4px 0;
+}
+.frame-5491 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+.frame-5351 {
+  display: flex;
+  align-items: center;
+}
+.union2 {
+  width: 160px;
+  height: auto;
+}
+.frame-5367 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.certified-brand-by {
+  color: #ef4136;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 14px;
+}
+.frame-5366,
+.frame-53672 {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+.frame-5461 {
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+}
+.frame-5457 {
+  width: 56px;
+  height: auto;
+}
+.frame-5458 {
+  width: 64px;
+  height: 64px;
+  position: relative;
+}
+.group {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.msme-logo-2 {
+  width: 80px;
+  height: 70px;
+  overflow: hidden;
+  position: relative;
+}
+.group2 {
+  position: absolute;
+  width: 85%;
+  left: 7%;
+  transform: translateY(-80px);
+}
+.frame-5354 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.gujjuben-s-khakhra-brand-all-rights-reserved {
+  color: #f0302d;
+  font-size: 12px;
+}
+.frame-5256 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.socials {
+  color: #f0302d;
+  font-size: 12px;
+}
+.mdi-instagram,
+.ic-baseline-facebook {
+  width: 18px;
+  height: 18px;
+}
 
 /* Instagram row */
 .frame-5352 {
@@ -592,85 +977,122 @@ body { background: #f5f5f5; overflow-x: hidden; font-family: "Segoe UI", "InterT
   width: 100%;
   padding: 8px 0;
 }
-.join-us { color: #ef4136; font-family: "SauceTomato-Regular", sans-serif; font-size: 15px; }
+.join-us {
+  color: #ef4136;
+  font-family: "SauceTomato-Regular", sans-serif;
+  font-size: 15px;
+}
 .gujjuben-s-khakhra2 {
   color: #ef4136;
   font-family: "SauceTomato-Regular", sans-serif;
   font-size: 14px;
   -webkit-text-stroke: 0 !important;
 }
-.instagram { width: 24px; height: 24px; }
+.instagram {
+  width: 24px;
+  height: 24px;
+}
 
 /* ══════════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .nav-bar { padding: 12px 16px; border-radius: 0; }
-  .features-tab { gap: 16px; }
-  .home, .about-us, .our-products, .deal-with-us { font-size: 14px; }
-
-  .frame-5475 { padding: 20px 16px 4px; }
-  .shopping-cart { font-size: 30px; }
-
-  .cart-products, .checkout, .contact-section, .frame-5492 {
-    border-radius: 14px;
-    margin-left: 12px;
-    margin-right: 12px;
-    width: calc(100% - 24px);
-  }
-
-  .frame-5501 { display: none; }
-
   .cart-row {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1.6fr auto;
+    grid-template-areas:
+      "product product"
+      "qty total";
+    gap: 12px;
     padding: 16px;
+    align-items: center;
   }
-  .row-price::before { content: "Price: "; font-size: 12px; color: #aaa; font-weight: 600; }
-  .row-total::before { content: "Total: "; font-size: 12px; color: #aaa; font-weight: 600; }
 
-  .checkout { flex-direction: column; align-items: stretch; padding: 20px; }
-  .checkout-btn-wrap { width: 100%; justify-content: center; }
+  .frame-5503 {
+    grid-area: product;
+  }
 
-  .contact-section { flex-direction: column; padding: 32px 24px 0; gap: 32px; }
-  .contact-left, .contact-right { width: 100%; }
-  .contact-right { padding-bottom: 32px; }
-  .deal-row { flex-direction: column; }
-  .contact-mascot { max-width: 200px; }
-  .deal-submit-btn { width: 100% !important; }
+  .frame-5506 {
+    grid-area: qty;
+    justify-self: start;
+  }
 
-  .frame-5492 { padding: 32px 20px; }
-  .frame-5345 { flex-direction: column; }
+  .row-total {
+    grid-area: total;
+    justify-self: end;
+    font-size: 24px;
+    font-weight: 800;
+    color: #ef4136;
+  }
+
+  .row-price {
+    display: none;
+  }
+
+  .row-price::before,
+  .row-total::before {
+    content: none;
+  }
+
+  .cart-item-img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .gujjuben-s-khakhra {
+    font-size: 18px;
+    line-height: 1.3;
+  }
 }
 
 /* ── Design System overrides: Cart ───────────── */
-body { background: var(--bg, #f8f9fa) !important; }
+body {
+  background: var(--bg, #f8f9fa) !important;
+}
 
 .shopping-cart {
-  font-family: var(--font-brand, 'SauceTomato', serif) !important;
+  font-family: var(--font-brand, "SauceTomato", serif) !important;
   font-size: clamp(28px, 4vw, 42px) !important;
   color: var(--red, #ef3d2f) !important;
 }
 .home-shopping-cart {
-  font-family: var(--font, 'Poppins', sans-serif) !important;
-  font-size: 13px !important; color: var(--text-3, #888) !important;
+  font-family: var(--font, "Poppins", sans-serif) !important;
+  font-size: 13px !important;
+  color: var(--text-3, #888) !important;
 }
 .cart-products {
   border-radius: var(--r-xl, 20px) !important;
-  box-shadow: var(--sh-sm, 0 2px 12px rgba(0,0,0,0.08)) !important;
+  box-shadow: var(--sh-sm, 0 2px 12px rgba(0, 0, 0, 0.08)) !important;
 }
 .gujjuben-s-khakhra {
-  font-family: var(--font, 'Poppins', sans-serif) !important;
-  font-size: 15px !important; font-weight: 700 !important;
+  font-family: var(--font, "Poppins", sans-serif) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
   color: var(--text, #1a1a1a) !important;
 }
 .checkout-btn-wrap {
-  background: linear-gradient(135deg, var(--green, #0b8f3c), #00c060) !important;
+  background: linear-gradient(
+    135deg,
+    var(--green, #0b8f3c),
+    #00c060
+  ) !important;
   border-radius: var(--r-pill, 50px) !important;
-  box-shadow: var(--sh-grn, 0 4px 16px rgba(11,143,60,0.28)) !important;
-  font-family: var(--font, 'Poppins', sans-serif) !important; font-weight: 700 !important;
+  box-shadow: var(--sh-grn, 0 4px 16px rgba(11, 143, 60, 0.28)) !important;
+  font-family: var(--font, "Poppins", sans-serif) !important;
+  font-weight: 700 !important;
 }
-.checkout-btn-wrap:hover { transform: translateY(-2px) !important; box-shadow: 0 8px 24px rgba(11,143,60,0.36) !important; }
-.pm-title { font-family: var(--font, 'Poppins', sans-serif) !important; font-weight: 800 !important; }
-.pm-online { background: linear-gradient(135deg, var(--red, #ef3d2f), #ff6b35) !important; border-radius: var(--r-md, 12px) !important; }
-.pm-cod    { border-radius: var(--r-md, 12px) !important; }
+.checkout-btn-wrap:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(11, 143, 60, 0.36) !important;
+}
+.pm-title {
+  font-family: var(--font, "Poppins", sans-serif) !important;
+  font-weight: 800 !important;
+}
+.pm-online {
+  background: linear-gradient(135deg, var(--red, #ef3d2f), #ff6b35) !important;
+  border-radius: var(--r-md, 12px) !important;
+}
+.pm-cod {
+  border-radius: var(--r-md, 12px) !important;
+}

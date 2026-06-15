@@ -25,8 +25,10 @@
   // Detect page source from path
   function getSource() {
     const p = window.location.pathname;
-    if (p.includes("product-detail") || p.includes("product-details")) return "product-detail";
-    if (p.includes("productlist") || p.includes("/products")) return "productlist";
+    if (p.includes("product-detail") || p.includes("product-details"))
+      return "product-detail";
+    if (p.includes("productlist") || p.includes("/products"))
+      return "productlist";
     if (p.includes("cart")) return "cart";
     if (p.includes("about")) return "about";
     return "home";
@@ -57,18 +59,12 @@
     if (typeof intlTelInput !== "undefined") {
       // Wrap the phone input
       iti = intlTelInput(phoneEl, {
-        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js",
-        initialCountry: "auto",
-        geoIpLookup: function (cb) {
-          fetch("https://ipapi.co/json/")
-            .then(r => r.json())
-            .then(d => cb(d.country_code || "IN"))
-            .catch(() => cb("IN"));
-        },
+        utilsScript:
+          "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js",
+        initialCountry: "IN",
         preferredCountries: ["IN", "US", "GB", "AE", "CA", "AU", "SG"],
         separateDialCode: true,
-        autoPlaceholder: "polite",
-        dropdownContainer: document.body,
+        autoPlaceholder: "aggressive",
       });
     }
 
@@ -102,7 +98,10 @@
         return;
       }
 
-      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Sending…";
+      }
 
       try {
         const db = ensureFirebase();
@@ -124,15 +123,19 @@
           });
         }
 
-        if (typeof showToast === "function") showToast("Message sent! We'll get back to you soon. ✅", "success");
+        if (typeof showToast === "function")
+          showToast("Message sent! We'll get back to you soon. ✅", "success");
         form.reset();
         if (iti) iti.setCountry("IN");
-
       } catch (err) {
         console.error("[ContactForm] submit error:", err);
-        if (typeof showToast === "function") showToast("Something went wrong. Please try again.", "error");
+        if (typeof showToast === "function")
+          showToast("Something went wrong. Please try again.", "error");
       } finally {
-        if (btn) { btn.disabled = false; btn.textContent = "Send Message"; }
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = "Send Message";
+        }
       }
     });
   }
