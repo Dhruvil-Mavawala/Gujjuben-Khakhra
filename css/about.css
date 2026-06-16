@@ -277,16 +277,16 @@ body {
 
 .frame-5283 {
   width: 100%;
-  aspect-ratio: 16 / 5;
-  /* responsive banner */
+  min-height: 520px;
 
   border-radius: 16px;
   overflow: hidden;
 
   background-image: url("frame-52830.png");
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-color: #f5f5f5;
 
   display: flex;
   flex-direction: column;
@@ -1674,7 +1674,9 @@ button[type="submit"] {
   color: #1a1a1a;
   background: #ffffff;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
   box-sizing: border-box;
   min-height: 48px;
   -webkit-appearance: none;
@@ -1708,7 +1710,10 @@ button[type="submit"] {
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(0, 152, 72, 0.28);
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
   min-height: 52px;
   display: inline-flex;
   align-items: center;

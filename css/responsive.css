@@ -2187,3 +2187,22 @@ img {
 ========================================= */
 
 /* No deal-row / iti overrides here — productlist.css owns them */
+@media (max-width: 600px) {
+  /* Bhakhri card only */
+  .frame-54772 {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .frame-54772 .rectangle-22 {
+    order: 1 !important;
+    width: 100% !important;
+    height: 200px !important;
+  }
+
+  .frame-54772 .frame-21 {
+    order: 2 !important;
+    width: 100% !important;
+    padding: 16px !important;
+  }
+}

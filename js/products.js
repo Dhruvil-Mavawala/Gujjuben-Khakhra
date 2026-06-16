@@ -153,7 +153,7 @@ async function refreshGridPrices() {
           <div class="button-main">
             <div class="frame-1">
               <div class="component-2-primary-button2" onclick="location.href='${link}'" style="cursor:pointer">
-                <div class="button">View More</div>
+                <div class="button">Shop Now</div>
               </div>
             </div>
           </div>
